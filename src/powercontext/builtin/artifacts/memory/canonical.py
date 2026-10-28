@@ -31,13 +31,19 @@ from powercontext.builtin.artifacts.memory.models import MemoryContent
 _ENTRY_HASH_DOMAIN = b"powercontext:entry-content:v1\0"
 _EMBEDDING_HASH_DOMAIN = b"powercontext:embedding-content:v1\0"
 _LOWER_HEX_64 = re.compile(r"[0-9a-f]{64}\Z")
+# Durable entry bodies must be able to hold one complete captured document page.
+# A dense annual-report page can exceed the earlier 8 KiB bound, and truncating it
+# would lose evidence that the source itself keeps in full.
+_MAX_ENTRY_TEXT_BYTES = 262144
 
 
 class _CanonicalValueError(ValueError):
     def __init__(self, code: str, detail: object | None = None) -> None:
         self.code = code
         messages = {
-            "text-too-long": "memory entry text must not exceed 8192 UTF-8 bytes",
+            "text-too-long": (
+                f"memory entry text must not exceed {_MAX_ENTRY_TEXT_BYTES} UTF-8 bytes"
+            ),
             "reason-too-long": "memory change reason must not exceed 512 Unicode code points",
             "identifier-empty": "memory identifiers must be non-empty strings",
             "identifier-ascii": "memory identifiers must contain only ASCII characters",
@@ -82,7 +88,7 @@ def normalize_text(value: str) -> str:
     """Normalize and validate one durable entry body."""
 
     normalized = _normalize_non_empty_string(value, "memory entry text")
-    if len(normalized.encode("utf-8")) > 8192:
+    if len(normalized.encode("utf-8")) > _MAX_ENTRY_TEXT_BYTES:
         raise _CanonicalValueError("text-too-long")
     return normalized
 
