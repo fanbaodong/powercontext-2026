@@ -331,6 +331,26 @@ _CONCEPTS: tuple[_Concept, ...] = (
         frozenset({"share", "stock"}),
         ("shares", "stock", "repurchase", "buyback", "outstanding"),
     ),
+    _Concept(
+        "segment",
+        frozenset({"segment", "division"}),
+        ("segment", "segments", "business", "sales", "operating", "income"),
+    ),
+    _Concept(
+        "ratio",
+        frozenset({"ratio"}),
+        ("current", "assets", "liabilities", "cash", "equivalents", "investments"),
+    ),
+    _Concept(
+        "concentration",
+        frozenset({"concentr"}),
+        ("customer", "customers", "accounted", "revenue", "sales"),
+    ),
+    _Concept(
+        "inventory",
+        frozenset({"inventor", "turnover"}),
+        ("inventories", "inventory", "cost", "sales", "goods"),
+    ),
 )
 
 _REGION_PHRASES = (
@@ -692,26 +712,51 @@ def _structural_prior(text: str, concepts: Sequence[_Concept]) -> float:
     names = {concept.name for concept in concepts}
     compact = _compact(text)
     lines = [line.strip() for line in text.splitlines() if line.strip()]
-    heading = " ".join(lines[:3]).casefold()
+    heading = " ".join(lines[:8]).casefold()
+    # pypdf sometimes splits words across text runs ("Cash Flow s", "T able"),
+    # so compare statement titles without any separators.
+    squashed = re.sub(r"[^a-z0-9]+", "", heading)
     prior = 0.0
-    if "income" in names and (
-        "consolidated statement of income" in heading or "consolidated statements of income" in heading
+    is_income = any(
+        title in squashed
+        for title in (
+            "consolidatedstatementofincome",
+            "consolidatedstatementsofincome",
+            "consolidatedstatementofoperations",
+            "consolidatedstatementsofoperations",
+            "consolidatedstatementofearnings",
+            "consolidatedstatementsofearnings",
+        )
+    )
+    is_balance = "balancesheet" in squashed
+    is_cash = "statementofcashflows" in squashed or "statementsofcashflows" in squashed
+    if is_income and names & {"income", "margin", "revenue", "ebitda"}:
+        prior += 0.9
+    if is_balance and names & {"liquidity", "debt", "ratio"}:
+        prior += 1.0
+    if is_cash and names & {"capex", "ebitda", "liquidity", "dividend"}:
+        prior += 0.9
+    if "segment" in names and (
+        "business segment" in compact or ("segments" in compact and "sales" in compact)
     ):
-        prior += 0.7
-    if "capex" in names and (
-        "consolidated statement of cash flows" in heading
-        or "consolidated statements of cash flows" in heading
+        prior += 0.8
+    if "concentration" in names and "customer" in compact and (
+        "accounted for" in compact or "% of" in compact or "concentration" in compact
     ):
+        prior += 0.9
+    if "inventory" in names:
+        if is_balance and "inventories" in compact:
+            prior += 1.0
+        if "cost of sales" in compact or "cost of goods sold" in compact:
+            prior += 0.5
+        if "inventory turnover" in compact:
+            prior += 0.5
+    if "margin" in names and ("gross margin" in compact or "gross profit" in compact):
+        prior += 0.5
+    if "margin" in names and "analysis of consolidated earnings" in compact:
         prior += 0.6
-    if "ebitda" in names and (
-        "consolidated statement of income" in heading or "consolidated statements of income" in heading
-    ):
-        prior += 0.5
-    if "ebitda" in names and (
-        "consolidated statement of cash flows" in heading
-        or "consolidated statements of cash flows" in heading
-    ):
-        prior += 0.5
+    if is_income and "capex" in names:
+        prior += 0.4
     if "legal" in names and "item 3. legal proceedings" in compact and "litigation" in compact:
         prior += 0.8
     if "geography" in names and "reportable segments" in compact:
@@ -854,6 +899,25 @@ async def search_pdf_pages(
                 candidates[candidate.identity] = candidate
             else:
                 existing.reciprocal_rank += contribution
+
+    # Score every captured page, not only the pages the lexical index surfaced:
+    # table-heavy annual reports often place the evidence on a statement page
+    # whose wording differs from the question, and a top-N index cut loses it.
+    records = await memory.list()
+    for record in records.entries:
+        sources = record.entry.sources
+        if len(sources) != 1:
+            continue
+        reference = sources[0]
+        if reference.source_type != PDF_PAGE_SOURCE_NAME:
+            continue
+        corpus_candidate = _Candidate(
+            memory_ref=record.memory_ref,
+            entry_id=record.entry.entry_id,
+            entry_version_id=record.entry.entry_version_id,
+            text=record.entry.text,
+        )
+        candidates.setdefault(corpus_candidate.identity, corpus_candidate)
     if not candidates:
         return ()
 
