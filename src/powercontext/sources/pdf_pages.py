@@ -1,4 +1,4 @@
-﻿# Copyright (c) 2026 OceanBase.
+# Copyright (c) 2026 OceanBase.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -380,6 +380,21 @@ _CONCEPTS: tuple[_Concept, ...] = (
         "security",
         frozenset({"securit"}),
         ("securities", "registered", "exchange", "class", "title"),
+    ),
+    _Concept(
+        "income",
+        frozenset({"income", "earnings"}),
+        ("income", "earnings", "operations", "operating", "net"),
+    ),
+    _Concept(
+        "return",
+        frozenset({"return", "roa", "roe", "roi"}),
+        ("net", "income", "assets", "equity", "sales"),
+    ),
+    _Concept(
+        "payout",
+        frozenset({"dividend", "payout"}),
+        ("dividends", "payout", "net", "income", "shares"),
     ),
 )
 
@@ -764,11 +779,21 @@ def _structural_prior(text: str, concepts: Sequence[_Concept]) -> float:
     )
     is_balance = "balancesheet" in squashed
     is_cash = "statementofcashflows" in squashed or "statementsofcashflows" in squashed
-    if is_income and names & {"income", "margin", "revenue", "ebitda"}:
+    if is_income and names & {
+        "income",
+        "earnings",
+        "margin",
+        "revenue",
+        "ebitda",
+        "dividend",
+        "payout",
+        "retention",
+        "return",
+    }:
         prior += 0.9
-    if is_balance and names & {"liquidity", "debt", "ratio"}:
+    if is_balance and names & {"liquidity", "debt", "ratio", "liability", "inventory", "return"}:
         prior += 1.0
-    if is_cash and names & {"capex", "ebitda", "liquidity", "dividend"}:
+    if is_cash and names & {"capex", "ebitda", "liquidity", "dividend", "payout", "retention", "return"}:
         prior += 0.9
     if "segment" in names and (
         "business segment" in compact or ("segments" in compact and "sales" in compact)
@@ -795,8 +820,11 @@ def _structural_prior(text: str, concepts: Sequence[_Concept]) -> float:
         "airlines" in compact or "significant portion" in compact or "limited number" in compact
     ):
         prior += 0.6
-    if "retention" in names and ("retention" in compact or "retained" in compact) and "card" in compact:
-        prior += 0.7
+    if "retention" in names:
+        if is_cash or is_income:
+            prior += 0.6
+        if "card" in compact and ("retention" in compact or "retained" in compact):
+            prior += 0.4
     if "category" in names and "business segment" in compact:
         prior += 0.8
     if "security" in names and "securities registered" in compact:
