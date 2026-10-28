@@ -1180,6 +1180,61 @@ RECURRENCE_OBSERVATION_TABLE = Table(
 
 RECURRENCE_TABLES = (RECURRENCE_MATCH_TABLE, RECURRENCE_OBSERVATION_TABLE)
 
+# Source Lifecycle keeps one row per registered evidence node and one row per
+# accepted Source event. Derived availability is stored with the node, so a
+# restart renders the same registrations, propagation results and generation
+# refusals without replaying the whole history.
+SOURCE_LIFECYCLE_NODES_TABLE = Table(
+    "pc_source_lifecycle_nodes",
+    SHARED_METADATA,
+    Column("scope_id", identity_string(MAX_SCOPE_ID_LENGTH), primary_key=True),
+    Column("node_id", identity_string(MAX_SOURCE_ID_LENGTH), primary_key=True),
+    Column("registration_order", Integer, nullable=False),
+    Column("kind", String(16), nullable=False),
+    # Exact JSON payload of the captured SourceRef, MemoryCitation or ArtifactRef.
+    Column("payload", _entry_text_type(), nullable=False),
+    Column("policy", String(3)),
+    Column("parents", _entry_text_type(), nullable=False),
+    Column("available", Boolean, nullable=False),
+    Column("lifecycle_revision", Integer, nullable=False),
+    Column("last_sequence", Integer, nullable=False),
+    UniqueConstraint("scope_id", "registration_order", name="uq_pc_source_lifecycle_nodes_order"),
+    Index("ix_pc_source_lifecycle_nodes_available", "scope_id", "kind", "available"),
+    CheckConstraint(
+        "kind IN ('source', 'memory', 'topic')",
+        name="ck_pc_source_lifecycle_nodes_kind",
+    ),
+    CheckConstraint(
+        "policy IS NULL OR policy IN ('all', 'any')",
+        name="ck_pc_source_lifecycle_nodes_policy",
+    ),
+    CheckConstraint("registration_order > 0", name="ck_pc_source_lifecycle_nodes_order_positive"),
+    # Sources keep their lifecycle revision; derived nodes store 0.
+    CheckConstraint("lifecycle_revision >= 0", name="ck_pc_source_lifecycle_nodes_revision_nonnegative"),
+    CheckConstraint("last_sequence >= 0", name="ck_pc_source_lifecycle_nodes_sequence_nonnegative"),
+)
+
+SOURCE_LIFECYCLE_EVENTS_TABLE = Table(
+    "pc_source_lifecycle_events",
+    SHARED_METADATA,
+    Column("scope_id", identity_string(MAX_SCOPE_ID_LENGTH), primary_key=True),
+    Column("node_id", identity_string(MAX_SOURCE_ID_LENGTH), primary_key=True),
+    Column("sequence", BigInteger, primary_key=True),
+    Column("revision", Integer, nullable=False),
+    Column("available", Boolean, nullable=False),
+    Column("reason", _entry_text_type(), nullable=False),
+    Column("status", String(16), nullable=False),
+    Index("ix_pc_source_lifecycle_events_status", "scope_id", "status"),
+    CheckConstraint(
+        "status IN ('pending', 'applied')",
+        name="ck_pc_source_lifecycle_events_status",
+    ),
+    CheckConstraint("revision > 0", name="ck_pc_source_lifecycle_events_revision_positive"),
+    CheckConstraint("sequence > 0", name="ck_pc_source_lifecycle_events_sequence_positive"),
+)
+
+SOURCE_LIFECYCLE_TABLES = (SOURCE_LIFECYCLE_NODES_TABLE, SOURCE_LIFECYCLE_EVENTS_TABLE)
+
 BUILTIN_TABLES = (
     SCOPE_TABLES
     + SHARED_TABLES
@@ -1187,5 +1242,6 @@ BUILTIN_TABLES = (
     + MEMORY_TABLES
     + STATISTICS_TABLES
     + RECURRENCE_TABLES
+    + SOURCE_LIFECYCLE_TABLES
     + (ARTIFACT_TAGS_TABLE, DREAM_RUNS_TABLE, RECEIPT_MIGRATION_REVIEW_TABLE)
 )

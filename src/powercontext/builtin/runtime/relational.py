@@ -143,6 +143,7 @@ from powercontext.builtin.persistence.handoff import (
     RelationalHandoffBackend,
     RelationalHandoffEvidenceResolver,
 )
+from powercontext.builtin.persistence.lifecycle import RelationalSourceLifecycleStore
 from powercontext.builtin.persistence.memory import RelationalMemoryBackend
 from powercontext.builtin.persistence.memory_index import MemoryIndex, NoMemoryIndex
 from powercontext.builtin.persistence.processing import ArtifactProcessingPendingRepository
@@ -550,6 +551,7 @@ class RelationalContexts:
     ) -> None:
         self.database = database
         self.scopes = ScopeApplication(database, cursor_secret=cursor_secret)
+        self.source_lifecycle = RelationalSourceLifecycleStore(database)
         self.source_registry = source_registry or BUILTIN_SOURCE_REGISTRY
         self.index = NoMemoryIndex() if index is None else index
         self.topic_memory_index = NoTopicMemoryIndex() if topic_memory_index is None else topic_memory_index
@@ -991,7 +993,7 @@ class RelationalContexts:
             embedding_profile = query_embedding.embedding_profile
         scope = validate_scope_id(scope_id)
         async with self.database.transaction() as connection:
-            return await self.repositories.topic_memories.search(
+            result = await self.repositories.topic_memories.search(
                 connection,
                 scope,
                 query,
@@ -1001,6 +1003,13 @@ class RelationalContexts:
                 embedding_profile=embedding_profile,
                 admission=admission,
             )
+            # A Topic Memory whose registered support is withdrawn keeps its exact
+            # Revisions readable but must leave native search and Prepared Context.
+            withdrawn = await self.source_lifecycle.hidden_topic_artifacts_with(connection, scope)
+        if not withdrawn:
+            return result
+        hits = tuple(hit for hit in result.hits if hit.artifact_ref.artifact_id not in withdrawn)
+        return result.model_copy(update={"hits": hits})
 
     async def search_skills(
         self,
