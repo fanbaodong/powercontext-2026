@@ -127,6 +127,7 @@ from powercontext.builtin.runtime.artifact_processing import (
     SpawnArtifactProcessingWorkerLauncher,
 )
 from powercontext.builtin.runtime.config import BuiltinConfig, ExternalSkillsConfig, InferenceConfig, RuntimeConfig
+from powercontext.builtin.runtime.count_admission import SourceCountAdmission
 from powercontext.builtin.runtime.decision_model import (
     DECISION_INSTRUCTIONS,
     DecisionInput,
@@ -193,6 +194,7 @@ class BuiltinConfigurationError(RuntimeError):
             "memory-reranker": "Memory reranking requires a configured generation or rerank model, or injected reranker",
             "scheduled-experience-pipeline": "scheduled Experience incubation requires a candidate pipeline",
             "scheduled-pipeline": "scheduled Source processing requires a candidate pipeline",
+            "source-count-pipeline": "count-triggered Source processing requires a declared Family and candidate pipeline",
             "scheduled-profile-generation": "scheduled Profile processing requires reconstructible generation",
             "topic-memory-child-resources": (
                 "Topic Memory processing requires child-reconstructible inference resources"
@@ -656,6 +658,7 @@ async def open_builtin_runtime(
         runtime.artifact_processing_supervisor = await resources.enter_async_context(
             _open_artifact_processing_supervisor(config, contexts, processing_bindings, tracing=tracing)
         )
+        await _open_source_count_admission(config, contexts, processing_bindings, runtime, resources)
         contexts.profiles.operation_context = runtime._operation
         if config.handoff_report.enabled:
             runtime.handoff_report = HandoffReportApplication(
@@ -734,6 +737,9 @@ def _artifact_processing_bindings(  # noqa: C901 - validate and assemble one reg
                 "profile": "scheduled-profile-generation",
             }[family]
             raise BuiltinConfigurationError(issue)
+    for family, threshold in _source_count_thresholds(config.runtime).items():
+        if threshold is not None and family not in declared | registered:
+            raise BuiltinConfigurationError("source-count-pipeline")
     if config.runtime.artifact_processing_role == "api":
         return tuple(configured)
     _validate_processing_source_registry(config, configured, source_registry)
@@ -817,6 +823,48 @@ def _topic_memory_provider_available(config: BuiltinConfig) -> bool:
     except BuiltinConfigurationError:
         return False
     return True
+
+
+_SOURCE_COUNT_THRESHOLD_FIELDS = {
+    "memory": "memory_source_count_threshold",
+    "topic-memory": "topic_memory_source_count_threshold",
+}
+
+
+def _source_count_thresholds(runtime: RuntimeConfig) -> dict[str, int | None]:
+    """Select the count admission configuration of each count-capable Family."""
+
+    return {
+        family: getattr(runtime, field_name) for family, field_name in _SOURCE_COUNT_THRESHOLD_FIELDS.items()
+    }
+
+
+async def _open_source_count_admission(
+    config: BuiltinConfig,
+    contexts: RelationalContexts,
+    bindings: Sequence[ArtifactProcessingBinding],
+    runtime: BuiltinRuntime,
+    resources: AsyncExitStack,
+) -> None:
+    """Start count admission over the Families this Runtime actually processes."""
+
+    supervisors = runtime.artifact_processing_supervisor
+    if supervisors is None:
+        return
+    thresholds: dict[str, int] = {}
+    for binding in bindings:
+        threshold = _source_count_thresholds(config.runtime).get(binding.artifact_family)
+        if threshold is not None:
+            thresholds[binding.binding_name] = threshold
+    if not thresholds:
+        return
+    await resources.enter_async_context(
+        SourceCountAdmission(
+            database=contexts.database,
+            thresholds=thresholds,
+            wake=supervisors.wake,
+        )
+    )
 
 
 @asynccontextmanager
