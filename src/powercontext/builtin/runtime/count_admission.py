@@ -89,6 +89,7 @@ class SourceCountAdmission:
         self._intents = ArtifactProcessingIntentRepository()
         self._cursors = SourceCursorRepository()
         self._after: dict[str, int] = dict.fromkeys(validated, 0)
+        self._initial_pass_done = False
         self._stop = asyncio.Event()
         self._task: asyncio.Task[None] | None = None
 
@@ -154,14 +155,16 @@ class SourceCountAdmission:
                             "binding": binding_name,
                         },
                     )
+            # The first pass also inspects Scopes whose dirty flag was already
+            # consumed by a failed attempt before the restart, so pending input
+            # accepted in an earlier Runtime instance triggers again.
+            self._initial_pass_done = True
             with suppress(TimeoutError):
                 await asyncio.wait_for(self._stop.wait(), timeout=self._poll_seconds)
 
     async def _evaluate(self, binding_name: str) -> None:
         threshold = self._thresholds[binding_name]
-        candidates = await self._candidates(binding_name, threshold)
-        if not candidates:
-            return
+        candidates = await self._candidates(binding_name, threshold, include_clean=not self._initial_pass_done)
         accepted = False
         for scope_id in candidates:
             if await self._accept(scope_id, binding_name, threshold):
@@ -169,8 +172,8 @@ class SourceCountAdmission:
         if accepted:
             self._wake(binding_name)
 
-    async def _candidates(self, binding_name: str, threshold: int) -> list[str]:
-        """Read one bounded page of dirty Intents and select due Scopes."""
+    async def _candidates(self, binding_name: str, threshold: int, *, include_clean: bool) -> list[str]:
+        """Read one bounded page of Intents and select due Scopes."""
 
         after = self._after[binding_name]
         candidates: list[str] = []
@@ -180,10 +183,11 @@ class SourceCountAdmission:
                 binding_name,
                 after_sequence=after,
                 limit=self._page_size,
-                # Count every registered Scope: a failed processing attempt may
-                # consume the dirty flag without advancing the successful cursor,
-                # and the pending input must still trigger again after a restart.
-                dirty_only=False,
+                # Dirty Intents drive steady-state admission.  The initial pass
+                # after Runtime start also considers clean Intents, because a
+                # failed attempt may have consumed the dirty flag without
+                # advancing the successful cursor.
+                dirty_only=not include_clean,
             )
             for row in rows:
                 # Accepted but unhandled work already owns the next invocation;
