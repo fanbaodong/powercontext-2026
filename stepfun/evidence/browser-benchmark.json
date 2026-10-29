@@ -1,0 +1,4023 @@
+{
+  "scope": "Real browser embeddings + seekdb server hybridSearch; no embedding/result replay",
+  "time": "2026-10-29T16:20:40.910Z",
+  "device": {
+    "cpu": "Intel(R) Core(TM) i7-14700HX",
+    "logicalCpus": 28,
+    "ramGiB": 15.714714050292969,
+    "os": "win32 10.0.26200"
+  },
+  "dataset": {
+    "documents": 24,
+    "queries": 12,
+    "repetitions": 3
+  },
+  "cases": [
+    {
+      "id": "wasm_fp32_b1",
+      "requested": {
+        "id": "wasm_fp32_b1",
+        "backend": "wasm",
+        "dtype": "fp32",
+        "batchSize": 1
+      },
+      "collection": "bench_1793290840910_wasm_fp32_b1",
+      "imports": [
+        {
+          "repeat": 1,
+          "embeddingMs": 259.2350000143051,
+          "writeMs": 186.717899999996,
+          "refreshMs": 547.7785999999978,
+          "importMs": 1019.919999986887,
+          "refreshCalls": 1
+        },
+        {
+          "repeat": 2,
+          "embeddingMs": 190.50499999523163,
+          "writeMs": 182.09700000000157,
+          "refreshMs": 854.4702000000034,
+          "importMs": 1250.199999988079,
+          "refreshCalls": 1
+        },
+        {
+          "repeat": 3,
+          "embeddingMs": 209.97999998927116,
+          "writeMs": 177.32749999999942,
+          "refreshMs": 695.9712,
+          "importMs": 1109.2549999952316,
+          "refreshCalls": 1
+        }
+      ],
+      "queries": [
+        {
+          "repeat": 0,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Coffee extraction",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.534999996423721,
+          "searchMs": 46.36170000000129,
+          "endToEndMs": 80.87999999523163
+        },
+        {
+          "repeat": 0,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Password security"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.044999986886978,
+          "searchMs": 45.420399999995425,
+          "endToEndMs": 78.89499998092651
+        },
+        {
+          "repeat": 0,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 7.449999988079071,
+          "searchMs": 46.32140000000072,
+          "endToEndMs": 80.60499998927116
+        },
+        {
+          "repeat": 0,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.794999986886978,
+          "searchMs": 44.55589999999938,
+          "endToEndMs": 74.65000000596046
+        },
+        {
+          "repeat": 0,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Index refresh",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.334999978542328,
+          "searchMs": 47.20210000000225,
+          "endToEndMs": 77.56000000238419
+        },
+        {
+          "repeat": 0,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.725000023841858,
+          "searchMs": 45.65179999999964,
+          "endToEndMs": 76.93500000238419
+        },
+        {
+          "repeat": 0,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.159999996423721,
+          "searchMs": 46.868099999999686,
+          "endToEndMs": 81.21000000834465
+        },
+        {
+          "repeat": 0,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.615000009536743,
+          "searchMs": 46.516600000002654,
+          "endToEndMs": 81.49500000476837
+        },
+        {
+          "repeat": 0,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.934999972581863,
+          "searchMs": 47.61729999999807,
+          "endToEndMs": 79.83000001311302
+        },
+        {
+          "repeat": 0,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.979999989271164,
+          "searchMs": 44.379399999997986,
+          "endToEndMs": 81.10500001907349
+        },
+        {
+          "repeat": 0,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Vector search",
+            "Index refresh",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 5.405000001192093,
+          "searchMs": 47.19289999999455,
+          "endToEndMs": 81.43999999761581
+        },
+        {
+          "repeat": 0,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 4.035000026226044,
+          "searchMs": 45.80920000000333,
+          "endToEndMs": 81.44499999284744
+        },
+        {
+          "repeat": 1,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Coffee extraction",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.094999998807907,
+          "searchMs": 44.89220000000205,
+          "endToEndMs": 81.64000001549721
+        },
+        {
+          "repeat": 1,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Password security"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 7.719999998807907,
+          "searchMs": 47.95780000000377,
+          "endToEndMs": 80.63499999046326
+        },
+        {
+          "repeat": 1,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.305000007152557,
+          "searchMs": 49.14480000000185,
+          "endToEndMs": 81.5799999833107
+        },
+        {
+          "repeat": 1,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 7.0999999940395355,
+          "searchMs": 44.31079999999929,
+          "endToEndMs": 80.85499998927116
+        },
+        {
+          "repeat": 1,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Index refresh",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.9449999928474426,
+          "searchMs": 46.18680000000313,
+          "endToEndMs": 81.06000000238419
+        },
+        {
+          "repeat": 1,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.659999996423721,
+          "searchMs": 47.302899999995134,
+          "endToEndMs": 81.42500001192093
+        },
+        {
+          "repeat": 1,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.33500000834465,
+          "searchMs": 46.94289999999455,
+          "endToEndMs": 79.87999999523163
+        },
+        {
+          "repeat": 1,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.6800000071525574,
+          "searchMs": 47.377800000002026,
+          "endToEndMs": 81.78999999165535
+        },
+        {
+          "repeat": 1,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.264999985694885,
+          "searchMs": 45.67439999999624,
+          "endToEndMs": 81.78499999642372
+        },
+        {
+          "repeat": 1,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.629999995231628,
+          "searchMs": 47.71999999999389,
+          "endToEndMs": 80.05500000715256
+        },
+        {
+          "repeat": 1,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Vector search",
+            "Index refresh",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 4.139999985694885,
+          "searchMs": 46.97990000000573,
+          "endToEndMs": 81.69499999284744
+        },
+        {
+          "repeat": 1,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 4.175000011920929,
+          "searchMs": 46.24409999999625,
+          "endToEndMs": 81.08000001311302
+        },
+        {
+          "repeat": 2,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Coffee extraction",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.925000011920929,
+          "searchMs": 49.50749999999971,
+          "endToEndMs": 80.42999997735023
+        },
+        {
+          "repeat": 2,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Password security"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.449999988079071,
+          "searchMs": 48.96560000000318,
+          "endToEndMs": 81.40999999642372
+        },
+        {
+          "repeat": 2,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.955000013113022,
+          "searchMs": 47.466999999996915,
+          "endToEndMs": 81.25499999523163
+        },
+        {
+          "repeat": 2,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.0299999713897705,
+          "searchMs": 46.06229999999778,
+          "endToEndMs": 80.90000000596046
+        },
+        {
+          "repeat": 2,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Index refresh",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.975000023841858,
+          "searchMs": 43.99689999999828,
+          "endToEndMs": 81.0799999833107
+        },
+        {
+          "repeat": 2,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.339999973773956,
+          "searchMs": 46.81730000000243,
+          "endToEndMs": 80.68500000238419
+        },
+        {
+          "repeat": 2,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.199999988079071,
+          "searchMs": 46.6362999999983,
+          "endToEndMs": 80.8449999988079
+        },
+        {
+          "repeat": 2,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.395000010728836,
+          "searchMs": 47.43880000000354,
+          "endToEndMs": 81.27000001072884
+        },
+        {
+          "repeat": 2,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.205000013113022,
+          "searchMs": 46.70249999999942,
+          "endToEndMs": 81.84999999403954
+        },
+        {
+          "repeat": 2,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.195000022649765,
+          "searchMs": 44.4178000000029,
+          "endToEndMs": 81.39499998092651
+        },
+        {
+          "repeat": 2,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Vector search",
+            "Index refresh",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 3.490000009536743,
+          "searchMs": 46.061399999998685,
+          "endToEndMs": 80.16500002145767
+        },
+        {
+          "repeat": 2,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 5.014999985694885,
+          "searchMs": 46.9774000000034,
+          "endToEndMs": 80.74000000953674
+        }
+      ],
+      "load": {
+        "backend": "wasm",
+        "dtype": "fp32",
+        "reason": "指定 WASM 对照测试",
+        "adapterInfo": null,
+        "loadMs": 1171.2049999833107,
+        "fetchSpanMs": 356.05000001192093,
+        "assets": [
+          {
+            "file": "/models/Xenova/all-MiniLM-L6-v2/tokenizer.json",
+            "durationMs": 5.5,
+            "transferBytes": 711961,
+            "encodedBytes": 711661,
+            "startMs": 60.74499997496605,
+            "endMs": 66.24499997496605
+          },
+          {
+            "file": "/models/Xenova/all-MiniLM-L6-v2/tokenizer_config.json",
+            "durationMs": 3.1099999845027924,
+            "transferBytes": 666,
+            "encodedBytes": 366,
+            "startMs": 60.96500000357628,
+            "endMs": 64.07499998807907
+          },
+          {
+            "file": "/models/Xenova/all-MiniLM-L6-v2/config.json",
+            "durationMs": 3.2249999940395355,
+            "transferBytes": 950,
+            "encodedBytes": 650,
+            "startMs": 61.09499999880791,
+            "endMs": 64.31999999284744
+          },
+          {
+            "file": "/models/Xenova/all-MiniLM-L6-v2/onnx/model.onnx",
+            "durationMs": 316.63499999046326,
+            "transferBytes": 90387906,
+            "encodedBytes": 90387606,
+            "startMs": 100.15999999642372,
+            "endMs": 416.794999986887
+          }
+        ],
+        "threads": 4
+      },
+      "firstImport": {
+        "repeat": 0,
+        "embeddingMs": 306.4099999964237,
+        "writeMs": 258.34859999999753,
+        "refreshMs": 766.6175999999978,
+        "importMs": 1361.905000001192,
+        "refreshCalls": 1
+      },
+      "firstQuery": {
+        "name": "bench_1793290840910_wasm_fp32_b1",
+        "revision": 4,
+        "searchMs": 55.01219999999739,
+        "results": [
+          {
+            "id": "ae059a5752675f48f3dbfe34916485ba1fb35d0bc29da0922c90264609792569",
+            "text": "Water indoor plants only when the top two centimeters of soil feel dry. Yellow leaves and soggy soil often indicate overwatering. Use a pot with drainage holes.",
+            "metadata": {
+              "dtype": "fp32",
+              "title": "Plant watering",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.032
+          },
+          {
+            "id": "64d248c72691e2f107ef84b9835218a4d108176eb03e44649d23cb0d46c4db9f",
+            "text": "If coffee tastes bitter, the grounds may be too fine or the brew time too long. A coarser grind and shorter extraction can reduce bitterness. Freshly roasted beans also affect flavor.",
+            "metadata": {
+              "dtype": "fp32",
+              "title": "Coffee extraction",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.0318
+          },
+          {
+            "id": "8ca7ba8e5626b6caaa2232b0abf75c29463f95ab8f12d319952865c55c1d1f80",
+            "text": "Rinse rice to remove excess surface starch. Add water, bring to a boil, then cover and simmer gently. Let the rice rest with the lid on after cooking so moisture distributes evenly.",
+            "metadata": {
+              "dtype": "fp32",
+              "title": "Cooking rice",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.0315
+          }
+        ],
+        "queryEmbeddingMs": 4.020000010728836,
+        "endToEndMs": 79.85499998927116,
+        "config": {
+          "backend": "wasm",
+          "dtype": "fp32",
+          "reason": "指定 WASM 对照测试",
+          "adapterInfo": null,
+          "loadMs": 1171.2049999833107,
+          "fetchSpanMs": 356.05000001192093,
+          "assets": [
+            {
+              "file": "/models/Xenova/all-MiniLM-L6-v2/tokenizer.json",
+              "durationMs": 5.5,
+              "transferBytes": 711961,
+              "encodedBytes": 711661,
+              "startMs": 60.74499997496605,
+              "endMs": 66.24499997496605
+            },
+            {
+              "file": "/models/Xenova/all-MiniLM-L6-v2/tokenizer_config.json",
+              "durationMs": 3.1099999845027924,
+              "transferBytes": 666,
+              "encodedBytes": 366,
+              "startMs": 60.96500000357628,
+              "endMs": 64.07499998807907
+            },
+            {
+              "file": "/models/Xenova/all-MiniLM-L6-v2/config.json",
+              "durationMs": 3.2249999940395355,
+              "transferBytes": 950,
+              "encodedBytes": 650,
+              "startMs": 61.09499999880791,
+              "endMs": 64.31999999284744
+            },
+            {
+              "file": "/models/Xenova/all-MiniLM-L6-v2/onnx/model.onnx",
+              "durationMs": 316.63499999046326,
+              "transferBytes": 90387906,
+              "encodedBytes": 90387606,
+              "startMs": 100.15999999642372,
+              "endMs": 416.794999986887
+            }
+          ],
+          "threads": 4
+        }
+      },
+      "summary": {
+        "embeddingMsMedian": 209.97999998927116,
+        "documentsPerSecond": 114.29659968199957,
+        "writeMsMedian": 182.09700000000157,
+        "refreshMsMedian": 695.9712,
+        "queryEmbeddingMsMedian": 4.760000005364418,
+        "searchMsMedian": 46.66939999999886,
+        "endToEndMsMedian": 81.06999999284744,
+        "recallAt3": 1,
+        "ndcgAt3": 0.9384882922619097
+      }
+    },
+    {
+      "id": "wasm_q8_b1",
+      "requested": {
+        "id": "wasm_q8_b1",
+        "backend": "wasm",
+        "dtype": "q8",
+        "batchSize": 1
+      },
+      "collection": "bench_1793290840910_wasm_q8_b1",
+      "imports": [
+        {
+          "repeat": 1,
+          "embeddingMs": 170.65999999642372,
+          "writeMs": 184.06270000000222,
+          "refreshMs": 597.1036000000022,
+          "importMs": 977.2750000059605,
+          "refreshCalls": 1
+        },
+        {
+          "repeat": 2,
+          "embeddingMs": 165.9200000166893,
+          "writeMs": 173.22759999999835,
+          "refreshMs": 696.0912000000026,
+          "importMs": 1060.8049999773502,
+          "refreshCalls": 1
+        },
+        {
+          "repeat": 3,
+          "embeddingMs": 173.64500001072884,
+          "writeMs": 202.831299999998,
+          "refreshMs": 656.4323000000004,
+          "importMs": 1069.5099999904633,
+          "refreshCalls": 1
+        }
+      ],
+      "queries": [
+        {
+          "repeat": 0,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Sourdough bread",
+            "Coffee extraction"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4,
+          "searchMs": 49.02299999999377,
+          "endToEndMs": 82.35999998450279
+        },
+        {
+          "repeat": 0,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Composting"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.699999988079071,
+          "searchMs": 48.6843000000008,
+          "endToEndMs": 80.0750000178814
+        },
+        {
+          "repeat": 0,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.520000010728836,
+          "searchMs": 48.332399999999325,
+          "endToEndMs": 79.29499998688698
+        },
+        {
+          "repeat": 0,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.7750000059604645,
+          "searchMs": 49.67280000000028,
+          "endToEndMs": 81.76499998569489
+        },
+        {
+          "repeat": 0,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Sourdough bread",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.0250000059604645,
+          "searchMs": 50.06210000000283,
+          "endToEndMs": 81.8449999988079
+        },
+        {
+          "repeat": 0,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.515000015497208,
+          "searchMs": 53.01680000000488,
+          "endToEndMs": 80.59000000357628
+        },
+        {
+          "repeat": 0,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.490000009536743,
+          "searchMs": 50.35059999999794,
+          "endToEndMs": 81.68499997258186
+        },
+        {
+          "repeat": 0,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.2249999940395355,
+          "searchMs": 49.800100000000384,
+          "endToEndMs": 81.74500000476837
+        },
+        {
+          "repeat": 0,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.240000009536743,
+          "searchMs": 49.26460000000225,
+          "endToEndMs": 81.9050000011921
+        },
+        {
+          "repeat": 0,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.6200000047683716,
+          "searchMs": 50.12220000000525,
+          "endToEndMs": 82.01499998569489
+        },
+        {
+          "repeat": 0,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Index refresh",
+            "Vector search",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.495000004768372,
+          "searchMs": 48.940999999998894,
+          "endToEndMs": 81.63999998569489
+        },
+        {
+          "repeat": 0,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 4.159999996423721,
+          "searchMs": 48.79420000000391,
+          "endToEndMs": 81.25
+        },
+        {
+          "repeat": 1,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Sourdough bread",
+            "Coffee extraction"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.615000009536743,
+          "searchMs": 48.62590000000637,
+          "endToEndMs": 81.60999998450279
+        },
+        {
+          "repeat": 1,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Composting"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.280000001192093,
+          "searchMs": 48.94829999999638,
+          "endToEndMs": 81.61500000953674
+        },
+        {
+          "repeat": 1,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.299999982118607,
+          "searchMs": 48.52240000000165,
+          "endToEndMs": 81.78499999642372
+        },
+        {
+          "repeat": 1,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.685000002384186,
+          "searchMs": 53.36230000000069,
+          "endToEndMs": 81.05499997735023
+        },
+        {
+          "repeat": 1,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Sourdough bread",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.3499999940395355,
+          "searchMs": 54.28859999999986,
+          "endToEndMs": 81.61500000953674
+        },
+        {
+          "repeat": 1,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.159999996423721,
+          "searchMs": 56.671500000004016,
+          "endToEndMs": 80.87999999523163
+        },
+        {
+          "repeat": 1,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.9149999916553497,
+          "searchMs": 51.84969999999885,
+          "endToEndMs": 80.81000000238419
+        },
+        {
+          "repeat": 1,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.7100000083446503,
+          "searchMs": 49.27509999999893,
+          "endToEndMs": 81.74500000476837
+        },
+        {
+          "repeat": 1,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.810000002384186,
+          "searchMs": 52.378499999998894,
+          "endToEndMs": 81.74500000476837
+        },
+        {
+          "repeat": 1,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.7249999940395355,
+          "searchMs": 52.7045999999973,
+          "endToEndMs": 81.3449999988079
+        },
+        {
+          "repeat": 1,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Index refresh",
+            "Vector search",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.365000009536743,
+          "searchMs": 48.9059999999954,
+          "endToEndMs": 80.93500000238419
+        },
+        {
+          "repeat": 1,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 4.644999980926514,
+          "searchMs": 51.57700000000477,
+          "endToEndMs": 81.62000000476837
+        },
+        {
+          "repeat": 2,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Sourdough bread",
+            "Coffee extraction"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.25,
+          "searchMs": 52.19800000000396,
+          "endToEndMs": 80.80000001192093
+        },
+        {
+          "repeat": 2,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Composting"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.319999992847443,
+          "searchMs": 51.948300000003655,
+          "endToEndMs": 80.44499999284744
+        },
+        {
+          "repeat": 2,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.7049999833106995,
+          "searchMs": 49.597200000003795,
+          "endToEndMs": 80.89000001549721
+        },
+        {
+          "repeat": 2,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.5399999916553497,
+          "searchMs": 48.394500000002154,
+          "endToEndMs": 79.80000001192093
+        },
+        {
+          "repeat": 2,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Sourdough bread",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.159999996423721,
+          "searchMs": 48.51959999999963,
+          "endToEndMs": 81.44500002264977
+        },
+        {
+          "repeat": 2,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.609999984502792,
+          "searchMs": 49.0934999999954,
+          "endToEndMs": 79.05499997735023
+        },
+        {
+          "repeat": 2,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.575000017881393,
+          "searchMs": 48.41610000000219,
+          "endToEndMs": 81.68999999761581
+        },
+        {
+          "repeat": 2,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.6200000047683716,
+          "searchMs": 49.10359999999491,
+          "endToEndMs": 81.79000002145767
+        },
+        {
+          "repeat": 2,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.2849999964237213,
+          "searchMs": 49.967100000001665,
+          "endToEndMs": 79.55000001192093
+        },
+        {
+          "repeat": 2,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.560000002384186,
+          "searchMs": 50.443499999993946,
+          "endToEndMs": 81.34999999403954
+        },
+        {
+          "repeat": 2,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Index refresh",
+            "Vector search",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.215000003576279,
+          "searchMs": 49.22060000000056,
+          "endToEndMs": 82.06000000238419
+        },
+        {
+          "repeat": 2,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 4.390000015497208,
+          "searchMs": 48.96399999999994,
+          "endToEndMs": 81.35499998927116
+        }
+      ],
+      "load": {
+        "backend": "wasm",
+        "dtype": "q8",
+        "reason": "指定 WASM 对照测试",
+        "adapterInfo": null,
+        "loadMs": 260.05000001192093,
+        "fetchSpanMs": 82.66999998688698,
+        "assets": [
+          {
+            "file": "/models/Xenova/all-MiniLM-L6-v2/onnx/model_quantized.onnx",
+            "durationMs": 82.66999998688698,
+            "transferBytes": 22972670,
+            "encodedBytes": 22972370,
+            "startMs": 9459.944999992847,
+            "endMs": 9542.614999979734
+          }
+        ],
+        "threads": 4
+      },
+      "firstImport": {
+        "repeat": 0,
+        "embeddingMs": 187.45999997854233,
+        "writeMs": 200.60469999999623,
+        "refreshMs": 795.8173000000024,
+        "importMs": 1219.3950000107288,
+        "refreshCalls": 1
+      },
+      "firstQuery": {
+        "name": "bench_1793290840910_wasm_q8_b1",
+        "revision": 4,
+        "searchMs": 53.77580000000307,
+        "results": [
+          {
+            "id": "ae059a5752675f48f3dbfe34916485ba1fb35d0bc29da0922c90264609792569",
+            "text": "Water indoor plants only when the top two centimeters of soil feel dry. Yellow leaves and soggy soil often indicate overwatering. Use a pot with drainage holes.",
+            "metadata": {
+              "dtype": "q8",
+              "title": "Plant watering",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.032
+          },
+          {
+            "id": "d5b44f39d9adf34c3e0f4f924eec890312355b97cee8abef950fe018703db00b",
+            "text": "A sourdough starter is a living culture of wild yeast and bacteria. Feed it equal weights of flour and water daily. A bubbly starter that doubles in size can raise bread without commercial yeast.",
+            "metadata": {
+              "dtype": "q8",
+              "title": "Sourdough bread",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.0318
+          },
+          {
+            "id": "64d248c72691e2f107ef84b9835218a4d108176eb03e44649d23cb0d46c4db9f",
+            "text": "If coffee tastes bitter, the grounds may be too fine or the brew time too long. A coarser grind and shorter extraction can reduce bitterness. Freshly roasted beans also affect flavor.",
+            "metadata": {
+              "dtype": "q8",
+              "title": "Coffee extraction",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.0315
+          }
+        ],
+        "queryEmbeddingMs": 4.234999984502792,
+        "endToEndMs": 67.13999998569489,
+        "config": {
+          "backend": "wasm",
+          "dtype": "q8",
+          "reason": "指定 WASM 对照测试",
+          "adapterInfo": null,
+          "loadMs": 260.05000001192093,
+          "fetchSpanMs": 82.66999998688698,
+          "assets": [
+            {
+              "file": "/models/Xenova/all-MiniLM-L6-v2/onnx/model_quantized.onnx",
+              "durationMs": 82.66999998688698,
+              "transferBytes": 22972670,
+              "encodedBytes": 22972370,
+              "startMs": 9459.944999992847,
+              "endMs": 9542.614999979734
+            }
+          ],
+          "threads": 4
+        }
+      },
+      "summary": {
+        "embeddingMsMedian": 170.65999999642372,
+        "documentsPerSecond": 140.6304933815946,
+        "writeMsMedian": 184.06270000000222,
+        "refreshMsMedian": 656.4323000000004,
+        "queryEmbeddingMsMedian": 3.8624999970197678,
+        "searchMsMedian": 49.43615000000136,
+        "endToEndMsMedian": 81.52750000357628,
+        "recallAt3": 1,
+        "ndcgAt3": 0.9692441461309548
+      }
+    },
+    {
+      "id": "wasm_q8_b8",
+      "requested": {
+        "id": "wasm_q8_b8",
+        "backend": "wasm",
+        "dtype": "q8",
+        "batchSize": 8
+      },
+      "collection": "bench_1793290840910_wasm_q8_b8",
+      "imports": [
+        {
+          "repeat": 1,
+          "embeddingMs": 132.02500000596046,
+          "writeMs": 182.78600000000006,
+          "refreshMs": 874.8389000000025,
+          "importMs": 1217.205000013113,
+          "refreshCalls": 1
+        },
+        {
+          "repeat": 2,
+          "embeddingMs": 136.375,
+          "writeMs": 169.34309999999823,
+          "refreshMs": 551.8850999999995,
+          "importMs": 883.169999986887,
+          "refreshCalls": 1
+        },
+        {
+          "repeat": 3,
+          "embeddingMs": 135.75,
+          "writeMs": 187.9794000000038,
+          "refreshMs": 656.6762000000017,
+          "importMs": 1009.7150000035763,
+          "refreshCalls": 1
+        }
+      ],
+      "queries": [
+        {
+          "repeat": 0,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Coffee extraction",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.905000001192093,
+          "searchMs": 48.00170000000071,
+          "endToEndMs": 80.73500001430511
+        },
+        {
+          "repeat": 0,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.955000013113022,
+          "searchMs": 48.60750000000553,
+          "endToEndMs": 81.81000000238419
+        },
+        {
+          "repeat": 0,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.4749999940395355,
+          "searchMs": 52.45390000000043,
+          "endToEndMs": 81.24499997496605
+        },
+        {
+          "repeat": 0,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.5,
+          "searchMs": 48.38850000000093,
+          "endToEndMs": 81.93500000238419
+        },
+        {
+          "repeat": 0,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Index refresh",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.0399999916553497,
+          "searchMs": 52.30979999999545,
+          "endToEndMs": 80.40000000596046
+        },
+        {
+          "repeat": 0,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Coffee extraction"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.4449999928474426,
+          "searchMs": 51.77370000000519,
+          "endToEndMs": 80.8449999988079
+        },
+        {
+          "repeat": 0,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.215000003576279,
+          "searchMs": 49.14839999999822,
+          "endToEndMs": 81.89499998092651
+        },
+        {
+          "repeat": 0,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 2.949999988079071,
+          "searchMs": 53.56900000000314,
+          "endToEndMs": 81.74000000953674
+        },
+        {
+          "repeat": 0,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.824999988079071,
+          "searchMs": 48.50350000000617,
+          "endToEndMs": 81.25500002503395
+        },
+        {
+          "repeat": 0,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.059999972581863,
+          "searchMs": 50.50270000000455,
+          "endToEndMs": 79.30500000715256
+        },
+        {
+          "repeat": 0,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Index refresh",
+            "Vector search",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.8600000143051147,
+          "searchMs": 48.02429999999731,
+          "endToEndMs": 81.44499999284744
+        },
+        {
+          "repeat": 0,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 4.509999990463257,
+          "searchMs": 51.00940000000264,
+          "endToEndMs": 79.35499998927116
+        },
+        {
+          "repeat": 1,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Coffee extraction",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.7849999964237213,
+          "searchMs": 51.54349999999977,
+          "endToEndMs": 79.7999999821186
+        },
+        {
+          "repeat": 1,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 6.005000025033951,
+          "searchMs": 51.25039999999717,
+          "endToEndMs": 81.78999999165535
+        },
+        {
+          "repeat": 1,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.354999989271164,
+          "searchMs": 48.34629999999743,
+          "endToEndMs": 80.86500000953674
+        },
+        {
+          "repeat": 1,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.5149999856948853,
+          "searchMs": 49.1929999999993,
+          "endToEndMs": 81.86999997496605
+        },
+        {
+          "repeat": 1,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Index refresh",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.3499999940395355,
+          "searchMs": 48.05769999999757,
+          "endToEndMs": 80.6749999821186
+        },
+        {
+          "repeat": 1,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Coffee extraction"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.645000010728836,
+          "searchMs": 51.85650000000169,
+          "endToEndMs": 81.89500001072884
+        },
+        {
+          "repeat": 1,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.564999997615814,
+          "searchMs": 49.42199999999866,
+          "endToEndMs": 81.76499998569489
+        },
+        {
+          "repeat": 1,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 5.699999988079071,
+          "searchMs": 50.722900000000664,
+          "endToEndMs": 79.84999999403954
+        },
+        {
+          "repeat": 1,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.5,
+          "searchMs": 50.02689999999711,
+          "endToEndMs": 81.5949999988079
+        },
+        {
+          "repeat": 1,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.625,
+          "searchMs": 47.71089999999822,
+          "endToEndMs": 81.22499999403954
+        },
+        {
+          "repeat": 1,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Index refresh",
+            "Vector search",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.225000023841858,
+          "searchMs": 49.20809999999619,
+          "endToEndMs": 81.36499997973442
+        },
+        {
+          "repeat": 1,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 4.5799999833106995,
+          "searchMs": 48.466400000004796,
+          "endToEndMs": 81.875
+        },
+        {
+          "repeat": 2,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Coffee extraction",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.969999998807907,
+          "searchMs": 53.19180000000051,
+          "endToEndMs": 81.12000000476837
+        },
+        {
+          "repeat": 2,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.919999986886978,
+          "searchMs": 48.82020000000193,
+          "endToEndMs": 82
+        },
+        {
+          "repeat": 2,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.034999996423721,
+          "searchMs": 48.1224000000002,
+          "endToEndMs": 81.4050000011921
+        },
+        {
+          "repeat": 2,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.6399999856948853,
+          "searchMs": 48.181799999998475,
+          "endToEndMs": 80.4050000011921
+        },
+        {
+          "repeat": 2,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Index refresh",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.035000026226044,
+          "searchMs": 51.941899999997986,
+          "endToEndMs": 81.89499998092651
+        },
+        {
+          "repeat": 2,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Coffee extraction"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.865000009536743,
+          "searchMs": 52.157500000001164,
+          "endToEndMs": 80.78999999165535
+        },
+        {
+          "repeat": 2,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.560000002384186,
+          "searchMs": 50.22920000000158,
+          "endToEndMs": 81.74000000953674
+        },
+        {
+          "repeat": 2,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.310000002384186,
+          "searchMs": 53.485200000002806,
+          "endToEndMs": 80.1700000166893
+        },
+        {
+          "repeat": 2,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.9000000059604645,
+          "searchMs": 52.28229999999894,
+          "endToEndMs": 80.77500000596046
+        },
+        {
+          "repeat": 2,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 4.090000003576279,
+          "searchMs": 48.54219999999623,
+          "endToEndMs": 81.18500000238419
+        },
+        {
+          "repeat": 2,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Index refresh",
+            "Vector search",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 3.1299999952316284,
+          "searchMs": 49.00540000000183,
+          "endToEndMs": 81.21500000357628
+        },
+        {
+          "repeat": 2,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 3.814999997615814,
+          "searchMs": 48.513700000003155,
+          "endToEndMs": 80.52500000596046
+        }
+      ],
+      "load": {
+        "backend": "wasm",
+        "dtype": "q8",
+        "reason": "指定 WASM 对照测试",
+        "adapterInfo": null,
+        "loadMs": 0,
+        "fetchSpanMs": 0,
+        "assets": [],
+        "threads": 4,
+        "reused": true
+      },
+      "firstImport": {
+        "repeat": 0,
+        "embeddingMs": 144.5300000011921,
+        "writeMs": 189.6606000000029,
+        "refreshMs": 547.3715999999986,
+        "importMs": 908.0949999988079,
+        "refreshCalls": 1
+      },
+      "firstQuery": {
+        "name": "bench_1793290840910_wasm_q8_b8",
+        "revision": 4,
+        "searchMs": 58.29750000000058,
+        "results": [
+          {
+            "id": "ae059a5752675f48f3dbfe34916485ba1fb35d0bc29da0922c90264609792569",
+            "text": "Water indoor plants only when the top two centimeters of soil feel dry. Yellow leaves and soggy soil often indicate overwatering. Use a pot with drainage holes.",
+            "metadata": {
+              "dtype": "q8",
+              "title": "Plant watering",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.032
+          },
+          {
+            "id": "64d248c72691e2f107ef84b9835218a4d108176eb03e44649d23cb0d46c4db9f",
+            "text": "If coffee tastes bitter, the grounds may be too fine or the brew time too long. A coarser grind and shorter extraction can reduce bitterness. Freshly roasted beans also affect flavor.",
+            "metadata": {
+              "dtype": "q8",
+              "title": "Coffee extraction",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.032
+          },
+          {
+            "id": "8ca7ba8e5626b6caaa2232b0abf75c29463f95ab8f12d319952865c55c1d1f80",
+            "text": "Rinse rice to remove excess surface starch. Add water, bring to a boil, then cover and simmer gently. Let the rice rest with the lid on after cooking so moisture distributes evenly.",
+            "metadata": {
+              "dtype": "q8",
+              "title": "Cooking rice",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.0315
+          }
+        ],
+        "queryEmbeddingMs": 3.3799999952316284,
+        "endToEndMs": 71.81499999761581,
+        "config": {
+          "backend": "wasm",
+          "dtype": "q8",
+          "reason": "指定 WASM 对照测试",
+          "adapterInfo": null,
+          "loadMs": 260.05000001192093,
+          "fetchSpanMs": 82.66999998688698,
+          "assets": [
+            {
+              "file": "/models/Xenova/all-MiniLM-L6-v2/onnx/model_quantized.onnx",
+              "durationMs": 82.66999998688698,
+              "transferBytes": 22972670,
+              "encodedBytes": 22972370,
+              "startMs": 9459.944999992847,
+              "endMs": 9542.614999979734
+            }
+          ],
+          "threads": 4
+        }
+      },
+      "summary": {
+        "embeddingMsMedian": 135.75,
+        "documentsPerSecond": 176.7955801104972,
+        "writeMsMedian": 182.78600000000006,
+        "refreshMsMedian": 656.6762000000017,
+        "queryEmbeddingMsMedian": 3.8199999928474426,
+        "searchMsMedian": 49.31504999999743,
+        "endToEndMsMedian": 81.23499998450279,
+        "recallAt3": 1,
+        "ndcgAt3": 0.9692441461309548
+      }
+    },
+    {
+      "id": "gpu_fp32_b8",
+      "requested": {
+        "id": "gpu_fp32_b8",
+        "backend": "webgpu",
+        "dtype": "fp32",
+        "batchSize": 8
+      },
+      "collection": "bench_1793290840910_gpu_fp32_b8",
+      "imports": [
+        {
+          "repeat": 1,
+          "embeddingMs": 273.705000013113,
+          "writeMs": 196.90129999999772,
+          "refreshMs": 547.3646999999983,
+          "importMs": 1039.9350000023842,
+          "refreshCalls": 1
+        },
+        {
+          "repeat": 2,
+          "embeddingMs": 275.0300000011921,
+          "writeMs": 188.27679999999964,
+          "refreshMs": 547.3619000000035,
+          "importMs": 1040.4549999833107,
+          "refreshCalls": 1
+        },
+        {
+          "repeat": 3,
+          "embeddingMs": 252.17999997735023,
+          "writeMs": 201.74120000000403,
+          "refreshMs": 547.3791999999958,
+          "importMs": 1035.2299999892712,
+          "refreshCalls": 1
+        }
+      ],
+      "queries": [
+        {
+          "repeat": 0,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Coffee extraction",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 10.405000001192093,
+          "searchMs": 52.2242000000042,
+          "endToEndMs": 80.72500002384186
+        },
+        {
+          "repeat": 0,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Password security"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 83.50999999046326,
+          "searchMs": 48.85399999999936,
+          "endToEndMs": 148.70500001311302
+        },
+        {
+          "repeat": 0,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 14.769999980926514,
+          "searchMs": 50.11450000000332,
+          "endToEndMs": 81.2000000178814
+        },
+        {
+          "repeat": 0,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 10.810000002384186,
+          "searchMs": 47.69560000000638,
+          "endToEndMs": 81.09999999403954
+        },
+        {
+          "repeat": 0,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Index refresh",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 14.724999994039536,
+          "searchMs": 46.35020000000077,
+          "endToEndMs": 81.34000000357628
+        },
+        {
+          "repeat": 0,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 10.909999996423721,
+          "searchMs": 47.99629999999888,
+          "endToEndMs": 80.30500000715256
+        },
+        {
+          "repeat": 0,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.854999989271164,
+          "searchMs": 45.32370000000083,
+          "endToEndMs": 81.9549999833107
+        },
+        {
+          "repeat": 0,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.145000010728836,
+          "searchMs": 48.4632999999958,
+          "endToEndMs": 81.64499998092651
+        },
+        {
+          "repeat": 0,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.544999986886978,
+          "searchMs": 46.92210000000341,
+          "endToEndMs": 81.83500000834465
+        },
+        {
+          "repeat": 0,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.560000002384186,
+          "searchMs": 49.269500000002154,
+          "endToEndMs": 81.4050000011921
+        },
+        {
+          "repeat": 0,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Vector search",
+            "Index refresh",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 9.645000010728836,
+          "searchMs": 48.326600000000326,
+          "endToEndMs": 81.47999998927116
+        },
+        {
+          "repeat": 0,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 21.30000001192093,
+          "searchMs": 45.85659999999916,
+          "endToEndMs": 81.88500002026558
+        },
+        {
+          "repeat": 1,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Coffee extraction",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 20.03499999642372,
+          "searchMs": 50.4829000000027,
+          "endToEndMs": 81.36000001430511
+        },
+        {
+          "repeat": 1,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Password security"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.879999995231628,
+          "searchMs": 46.240200000000186,
+          "endToEndMs": 82.31499999761581
+        },
+        {
+          "repeat": 1,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 18.270000010728836,
+          "searchMs": 45.6961999999985,
+          "endToEndMs": 80.14000001549721
+        },
+        {
+          "repeat": 1,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 11.3299999833107,
+          "searchMs": 47.229599999998754,
+          "endToEndMs": 80.66500002145767
+        },
+        {
+          "repeat": 1,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Index refresh",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 10.344999998807907,
+          "searchMs": 53.24300000000221,
+          "endToEndMs": 81.81499999761581
+        },
+        {
+          "repeat": 1,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 10.75,
+          "searchMs": 45.90819999999803,
+          "endToEndMs": 81.52500000596046
+        },
+        {
+          "repeat": 1,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.944999992847443,
+          "searchMs": 50.25370000000112,
+          "endToEndMs": 81.70500001311302
+        },
+        {
+          "repeat": 1,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.985000014305115,
+          "searchMs": 47.40299999999843,
+          "endToEndMs": 81.125
+        },
+        {
+          "repeat": 1,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 12.290000021457672,
+          "searchMs": 46.491000000001804,
+          "endToEndMs": 82.15000000596046
+        },
+        {
+          "repeat": 1,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 10.794999986886978,
+          "searchMs": 47.58439999999973,
+          "endToEndMs": 80.09999999403954
+        },
+        {
+          "repeat": 1,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Vector search",
+            "Index refresh",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 21.294999986886978,
+          "searchMs": 46.55770000000484,
+          "endToEndMs": 81.37000000476837
+        },
+        {
+          "repeat": 1,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 21.37000000476837,
+          "searchMs": 46.2751999999964,
+          "endToEndMs": 81.85999998450279
+        },
+        {
+          "repeat": 2,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Coffee extraction",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 20.735000014305115,
+          "searchMs": 47.334499999997206,
+          "endToEndMs": 80.51000002026558
+        },
+        {
+          "repeat": 2,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Password security"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 18.015000015497208,
+          "searchMs": 48.11319999999978,
+          "endToEndMs": 80.47499999403954
+        },
+        {
+          "repeat": 2,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 17.305000007152557,
+          "searchMs": 46.27589999999327,
+          "endToEndMs": 79.61000001430511
+        },
+        {
+          "repeat": 2,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 17.189999997615814,
+          "searchMs": 45.29359999999724,
+          "endToEndMs": 80.38499999046326
+        },
+        {
+          "repeat": 2,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Index refresh",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 8.900000005960464,
+          "searchMs": 46.80359999999928,
+          "endToEndMs": 78.85499998927116
+        },
+        {
+          "repeat": 2,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 10.065000027418137,
+          "searchMs": 48.070400000004156,
+          "endToEndMs": 81.85000002384186
+        },
+        {
+          "repeat": 2,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 10.5450000166893,
+          "searchMs": 45.85160000000178,
+          "endToEndMs": 81.82499998807907
+        },
+        {
+          "repeat": 2,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.459999978542328,
+          "searchMs": 45.76559999999881,
+          "endToEndMs": 81.97999998927116
+        },
+        {
+          "repeat": 2,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.125,
+          "searchMs": 48.029099999999744,
+          "endToEndMs": 81.7999999821186
+        },
+        {
+          "repeat": 2,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 10.875,
+          "searchMs": 49.14280000000144,
+          "endToEndMs": 81.18999999761581
+        },
+        {
+          "repeat": 2,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Vector search",
+            "Index refresh",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 10.254999995231628,
+          "searchMs": 47.32289999999921,
+          "endToEndMs": 81.65999999642372
+        },
+        {
+          "repeat": 2,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 24.974999994039536,
+          "searchMs": 49.739400000005844,
+          "endToEndMs": 98.39000001549721
+        }
+      ],
+      "load": {
+        "backend": "webgpu",
+        "dtype": "fp32",
+        "reason": "",
+        "adapterInfo": {
+          "vendor": "intel",
+          "architecture": "gen-12lp",
+          "description": "",
+          "shaderF16": true
+        },
+        "loadMs": 294.4950000047684,
+        "fetchSpanMs": 0,
+        "assets": [],
+        "threads": 4
+      },
+      "firstImport": {
+        "repeat": 0,
+        "embeddingMs": 719.9800000190735,
+        "writeMs": 197.84659999999712,
+        "refreshMs": 547.707899999994,
+        "importMs": 1491.550000011921,
+        "refreshCalls": 1
+      },
+      "firstQuery": {
+        "name": "bench_1793290840910_gpu_fp32_b8",
+        "revision": 4,
+        "searchMs": 57.61119999999937,
+        "results": [
+          {
+            "id": "ae059a5752675f48f3dbfe34916485ba1fb35d0bc29da0922c90264609792569",
+            "text": "Water indoor plants only when the top two centimeters of soil feel dry. Yellow leaves and soggy soil often indicate overwatering. Use a pot with drainage holes.",
+            "metadata": {
+              "dtype": "fp32",
+              "title": "Plant watering",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.032
+          },
+          {
+            "id": "64d248c72691e2f107ef84b9835218a4d108176eb03e44649d23cb0d46c4db9f",
+            "text": "If coffee tastes bitter, the grounds may be too fine or the brew time too long. A coarser grind and shorter extraction can reduce bitterness. Freshly roasted beans also affect flavor.",
+            "metadata": {
+              "dtype": "fp32",
+              "title": "Coffee extraction",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.0318
+          },
+          {
+            "id": "8ca7ba8e5626b6caaa2232b0abf75c29463f95ab8f12d319952865c55c1d1f80",
+            "text": "Rinse rice to remove excess surface starch. Add water, bring to a boil, then cover and simmer gently. Let the rice rest with the lid on after cooking so moisture distributes evenly.",
+            "metadata": {
+              "dtype": "fp32",
+              "title": "Cooking rice",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.0315
+          }
+        ],
+        "queryEmbeddingMs": 56.75,
+        "endToEndMs": 127.00500002503395,
+        "config": {
+          "backend": "webgpu",
+          "dtype": "fp32",
+          "reason": "",
+          "adapterInfo": {
+            "vendor": "intel",
+            "architecture": "gen-12lp",
+            "description": "",
+            "shaderF16": true
+          },
+          "loadMs": 294.4950000047684,
+          "fetchSpanMs": 0,
+          "assets": [],
+          "threads": 4
+        }
+      },
+      "summary": {
+        "embeddingMsMedian": 273.705000013113,
+        "documentsPerSecond": 87.68564695146299,
+        "writeMsMedian": 196.90129999999772,
+        "refreshMsMedian": 547.3646999999983,
+        "queryEmbeddingMsMedian": 10.802499994635582,
+        "searchMsMedian": 47.36874999999782,
+        "endToEndMsMedian": 81.44249999523163,
+        "recallAt3": 1,
+        "ndcgAt3": 0.9384882922619097
+      }
+    },
+    {
+      "id": "gpu_fp16_b8",
+      "requested": {
+        "id": "gpu_fp16_b8",
+        "backend": "auto",
+        "dtype": "auto",
+        "batchSize": 8
+      },
+      "collection": "bench_1793290840910_gpu_fp16_b8",
+      "imports": [
+        {
+          "repeat": 1,
+          "embeddingMs": 178.70999997854233,
+          "writeMs": 184.69809999999416,
+          "refreshMs": 614.5453999999881,
+          "importMs": 999.5550000071526,
+          "refreshCalls": 1
+        },
+        {
+          "repeat": 2,
+          "embeddingMs": 186.86499997973442,
+          "writeMs": 178.72319999999308,
+          "refreshMs": 614.7409999999945,
+          "importMs": 1010.8599999845028,
+          "refreshCalls": 1
+        },
+        {
+          "repeat": 3,
+          "embeddingMs": 190.03499999642372,
+          "writeMs": 173.56720000000496,
+          "refreshMs": 717.3611999999994,
+          "importMs": 1104.3799999952316,
+          "refreshCalls": 1
+        }
+      ],
+      "queries": [
+        {
+          "repeat": 0,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Coffee extraction",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 11.814999997615814,
+          "searchMs": 47.463099999993574,
+          "endToEndMs": 81.89000001549721
+        },
+        {
+          "repeat": 0,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 77.78999999165535,
+          "searchMs": 45.15459999999439,
+          "endToEndMs": 131.8599999845028
+        },
+        {
+          "repeat": 0,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 21.37999999523163,
+          "searchMs": 48.178799999994226,
+          "endToEndMs": 81.75999999046326
+        },
+        {
+          "repeat": 0,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 20.094999998807907,
+          "searchMs": 48.02629999999772,
+          "endToEndMs": 81.30500000715256
+        },
+        {
+          "repeat": 0,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Index refresh",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 18.110000014305115,
+          "searchMs": 46.21450000000186,
+          "endToEndMs": 81.17500001192093
+        },
+        {
+          "repeat": 0,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 15.004999995231628,
+          "searchMs": 45.24109999999928,
+          "endToEndMs": 80.71500000357628
+        },
+        {
+          "repeat": 0,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 12.974999994039536,
+          "searchMs": 44.455199999996694,
+          "endToEndMs": 81.22999998927116
+        },
+        {
+          "repeat": 0,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.264999985694885,
+          "searchMs": 45.609700000000885,
+          "endToEndMs": 80.7800000011921
+        },
+        {
+          "repeat": 0,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.530000001192093,
+          "searchMs": 46.56910000000789,
+          "endToEndMs": 81.81499999761581
+        },
+        {
+          "repeat": 0,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 10.525000005960464,
+          "searchMs": 46.83830000000307,
+          "endToEndMs": 81.53499999642372
+        },
+        {
+          "repeat": 0,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Vector search",
+            "Index refresh",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 9.384999990463257,
+          "searchMs": 49.06239999999525,
+          "endToEndMs": 81.65000000596046
+        },
+        {
+          "repeat": 0,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 9.474999994039536,
+          "searchMs": 48.61740000000282,
+          "endToEndMs": 81.40999999642372
+        },
+        {
+          "repeat": 1,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Coffee extraction",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 10.125,
+          "searchMs": 46.845900000000256,
+          "endToEndMs": 81.45500001311302
+        },
+        {
+          "repeat": 1,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 10.099999994039536,
+          "searchMs": 47.6310000000085,
+          "endToEndMs": 81.93999999761581
+        },
+        {
+          "repeat": 1,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 26.37000000476837,
+          "searchMs": 46.87630000000354,
+          "endToEndMs": 98.31000000238419
+        },
+        {
+          "repeat": 1,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.050000011920929,
+          "searchMs": 47.730100000000675,
+          "endToEndMs": 81.47999998927116
+        },
+        {
+          "repeat": 1,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Index refresh",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 12.140000015497208,
+          "searchMs": 46.140299999999115,
+          "endToEndMs": 81.96500000357628
+        },
+        {
+          "repeat": 1,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 10.174999982118607,
+          "searchMs": 48.559900000007474,
+          "endToEndMs": 81.69499999284744
+        },
+        {
+          "repeat": 1,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.305000007152557,
+          "searchMs": 45.7723999999871,
+          "endToEndMs": 79.82499998807907
+        },
+        {
+          "repeat": 1,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 8.535000026226044,
+          "searchMs": 46.26829999999609,
+          "endToEndMs": 81.5
+        },
+        {
+          "repeat": 1,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.38000002503395,
+          "searchMs": 48.65099999999802,
+          "endToEndMs": 81.64500001072884
+        },
+        {
+          "repeat": 1,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 23.519999980926514,
+          "searchMs": 45.21400000000722,
+          "endToEndMs": 98.23999997973442
+        },
+        {
+          "repeat": 1,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Vector search",
+            "Index refresh",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 9.905000001192093,
+          "searchMs": 47.69649999999092,
+          "endToEndMs": 81.73999997973442
+        },
+        {
+          "repeat": 1,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 9.550000011920929,
+          "searchMs": 44.78499999998894,
+          "endToEndMs": 81.74499997496605
+        },
+        {
+          "repeat": 2,
+          "query": "How can I avoid giving houseplants too much water?",
+          "expected": [
+            "Plant watering"
+          ],
+          "titles": [
+            "Plant watering",
+            "Coffee extraction",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.224999994039536,
+          "searchMs": 45.04529999999795,
+          "endToEndMs": 80.4699999988079
+        },
+        {
+          "repeat": 2,
+          "query": "My bicycle has a flat tire. How do I fix the hole?",
+          "expected": [
+            "Bicycle puncture"
+          ],
+          "titles": [
+            "Bicycle puncture",
+            "Cooking rice",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 9.75,
+          "searchMs": 48.271099999998114,
+          "endToEndMs": 79.63499999046326
+        },
+        {
+          "repeat": 2,
+          "query": "How can I recover data after deleting it by mistake?",
+          "expected": [
+            "Database backups"
+          ],
+          "titles": [
+            "Database backups",
+            "Index refresh",
+            "Cooking rice"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 11.48999997973442,
+          "searchMs": 46.60250000000815,
+          "endToEndMs": 80.75999999046326
+        },
+        {
+          "repeat": 2,
+          "query": "How do I undo a commit that my teammates already pulled?",
+          "expected": [
+            "Git undo"
+          ],
+          "titles": [
+            "Git undo",
+            "Database backups",
+            "Bicycle puncture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 10,
+          "searchMs": 45.07140000000072,
+          "endToEndMs": 81.5
+        },
+        {
+          "repeat": 2,
+          "query": "Why does my coffee taste too bitter?",
+          "expected": [
+            "Coffee extraction"
+          ],
+          "titles": [
+            "Coffee extraction",
+            "Index refresh",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 8.870000004768372,
+          "searchMs": 47.134699999995064,
+          "endToEndMs": 79.40999999642372
+        },
+        {
+          "repeat": 2,
+          "query": "How can I blur the background of a portrait photo?",
+          "expected": [
+            "Camera aperture"
+          ],
+          "titles": [
+            "Camera aperture",
+            "Database backups",
+            "Sourdough bread"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 20.905000001192093,
+          "searchMs": 44.46510000000126,
+          "endToEndMs": 81.52000001072884
+        },
+        {
+          "repeat": 2,
+          "query": "How can I stop my metal tools from getting rusty?",
+          "expected": [
+            "Rust prevention"
+          ],
+          "titles": [
+            "Rust prevention",
+            "Coffee extraction",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 23.42500001192093,
+          "searchMs": 43.844900000010966,
+          "endToEndMs": 81.62999999523163
+        },
+        {
+          "repeat": 2,
+          "query": "How can I make bread rise using wild yeast?",
+          "expected": [
+            "Sourdough bread"
+          ],
+          "titles": [
+            "Sourdough bread",
+            "Coffee extraction",
+            "Vector search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 17.62000000476837,
+          "searchMs": 46.10519999999087,
+          "endToEndMs": 81.32499998807907
+        },
+        {
+          "repeat": 2,
+          "query": "What keeps a web page responsive during expensive calculations?",
+          "expected": [
+            "Browser workers"
+          ],
+          "titles": [
+            "Browser workers",
+            "Memory leaks",
+            "Camera aperture"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 14.590000003576279,
+          "searchMs": 45.9201999999932,
+          "endToEndMs": 81.50999999046326
+        },
+        {
+          "repeat": 2,
+          "query": "Which search method finds similar ideas with different wording?",
+          "expected": [
+            "Vector search"
+          ],
+          "titles": [
+            "Vector search",
+            "Full text search",
+            "Index refresh"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 1,
+          "queryEmbeddingMs": 14.66499999165535,
+          "searchMs": 45.32289999999921,
+          "endToEndMs": 81.28999999165535
+        },
+        {
+          "repeat": 2,
+          "query": "When will newly imported documents become searchable?",
+          "expected": [
+            "Index refresh"
+          ],
+          "titles": [
+            "Vector search",
+            "Index refresh",
+            "Full text search"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 9.780000001192093,
+          "searchMs": 48.12039999999979,
+          "endToEndMs": 97.58000001311302
+        },
+        {
+          "repeat": 2,
+          "query": "What should happen when a browser cannot use the GPU?",
+          "expected": [
+            "GPU fallback"
+          ],
+          "titles": [
+            "Browser workers",
+            "GPU fallback",
+            "Database backups"
+          ],
+          "recallAt3": 1,
+          "ndcgAt3": 0.6309297535714575,
+          "queryEmbeddingMs": 9.240000009536743,
+          "searchMs": 46.191399999996065,
+          "endToEndMs": 81.55500000715256
+        }
+      ],
+      "load": {
+        "backend": "webgpu",
+        "dtype": "fp16",
+        "reason": "",
+        "adapterInfo": {
+          "vendor": "intel",
+          "architecture": "gen-12lp",
+          "description": "",
+          "shaderF16": true
+        },
+        "loadMs": 394.3899999856949,
+        "fetchSpanMs": 148.0300000011921,
+        "assets": [
+          {
+            "file": "/models/Xenova/all-MiniLM-L6-v2/onnx/model_fp16.onnx",
+            "durationMs": 148.0300000011921,
+            "transferBytes": 45298125,
+            "encodedBytes": 45297825,
+            "startMs": 33509.64499998093,
+            "endMs": 33657.67499998212
+          }
+        ],
+        "threads": 4
+      },
+      "firstImport": {
+        "repeat": 0,
+        "embeddingMs": 427.6449999809265,
+        "writeMs": 192.70070000000123,
+        "refreshMs": 512.4465000000055,
+        "importMs": 1155.8600000143051,
+        "refreshCalls": 1
+      },
+      "firstQuery": {
+        "name": "bench_1793290840910_gpu_fp16_b8",
+        "revision": 4,
+        "searchMs": 51.81450000000768,
+        "results": [
+          {
+            "id": "ae059a5752675f48f3dbfe34916485ba1fb35d0bc29da0922c90264609792569",
+            "text": "Water indoor plants only when the top two centimeters of soil feel dry. Yellow leaves and soggy soil often indicate overwatering. Use a pot with drainage holes.",
+            "metadata": {
+              "dtype": "fp16",
+              "title": "Plant watering",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.032
+          },
+          {
+            "id": "64d248c72691e2f107ef84b9835218a4d108176eb03e44649d23cb0d46c4db9f",
+            "text": "If coffee tastes bitter, the grounds may be too fine or the brew time too long. A coarser grind and shorter extraction can reduce bitterness. Freshly roasted beans also affect flavor.",
+            "metadata": {
+              "dtype": "fp16",
+              "title": "Coffee extraction",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.0318
+          },
+          {
+            "id": "8ca7ba8e5626b6caaa2232b0abf75c29463f95ab8f12d319952865c55c1d1f80",
+            "text": "Rinse rice to remove excess surface starch. Add water, bring to a boil, then cover and simmer gently. Let the rice rest with the lid on after cooking so moisture distributes evenly.",
+            "metadata": {
+              "dtype": "fp16",
+              "title": "Cooking rice",
+              "source": "included-example",
+              "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+            },
+            "score": 0.0315
+          }
+        ],
+        "queryEmbeddingMs": 41.44499999284744,
+        "endToEndMs": 108.94500002264977,
+        "config": {
+          "backend": "webgpu",
+          "dtype": "fp16",
+          "reason": "",
+          "adapterInfo": {
+            "vendor": "intel",
+            "architecture": "gen-12lp",
+            "description": "",
+            "shaderF16": true
+          },
+          "loadMs": 394.3899999856949,
+          "fetchSpanMs": 148.0300000011921,
+          "assets": [
+            {
+              "file": "/models/Xenova/all-MiniLM-L6-v2/onnx/model_fp16.onnx",
+              "durationMs": 148.0300000011921,
+              "transferBytes": 45298125,
+              "encodedBytes": 45297825,
+              "startMs": 33509.64499998093,
+              "endMs": 33657.67499998212
+            }
+          ],
+          "threads": 4
+        }
+      },
+      "summary": {
+        "embeddingMsMedian": 186.86499997973442,
+        "documentsPerSecond": 128.43496643353657,
+        "writeMsMedian": 178.72319999999308,
+        "refreshMsMedian": 614.7409999999945,
+        "queryEmbeddingMsMedian": 10.149999991059303,
+        "searchMsMedian": 46.41870000000199,
+        "endToEndMsMedian": 81.51500000059605,
+        "recallAt3": 1,
+        "ndcgAt3": 0.9384882922619097
+      }
+    }
+  ],
+  "checks": [
+    "Incremental import searchable after refresh",
+    "Duplicate import count unchanged",
+    "Collection isolation",
+    "Active collection restored after reload",
+    "WebGPU unavailable -> automatic WASM INT8 -> import/search PASS",
+    "Browser page and workers use only local resources; no cloud inference"
+  ],
+  "externalRequests": [],
+  "browser": "156.0.8078.73",
+  "database": {
+    "ok": true,
+    "database": "seekdb",
+    "version": "5.7.25-OceanBase seekdb-v1.4.0.0",
+    "sdk": "seekdb@1.4.0",
+    "modelRevision": "751bff37182d3f1213fa05d7196b954e230abad9"
+  },
+  "refreshComparison": [
+    {
+      "mode": "each",
+      "repeat": 0,
+      "writeMs": 243.273600000015,
+      "refreshMs": 15327.023399999991,
+      "refreshCalls": 24,
+      "count": 24
+    },
+    {
+      "mode": "each",
+      "repeat": 1,
+      "writeMs": 288.6251999999222,
+      "refreshMs": 15656.56240000001,
+      "refreshCalls": 24,
+      "count": 24
+    },
+    {
+      "mode": "each",
+      "repeat": 2,
+      "writeMs": 322.58470000002126,
+      "refreshMs": 16393.9804,
+      "refreshCalls": 24,
+      "count": 24
+    },
+    {
+      "mode": "once",
+      "repeat": 0,
+      "writeMs": 187.7390000000014,
+      "refreshMs": 547.5108999999939,
+      "refreshCalls": 1,
+      "count": 24
+    },
+    {
+      "mode": "once",
+      "repeat": 1,
+      "writeMs": 191.1085999999923,
+      "refreshMs": 547.4579999999987,
+      "refreshCalls": 1,
+      "count": 24
+    },
+    {
+      "mode": "once",
+      "repeat": 2,
+      "writeMs": 176.38889999999083,
+      "refreshMs": 656.480899999995,
+      "refreshCalls": 1,
+      "count": 24
+    }
+  ],
+  "incremental": {
+    "collection": "increment_1793290840910",
+    "afterImportCount": 3,
+    "topResult": "Project Zephyr",
+    "otherCollectionResultCount": 0
+  },
+  "fallback": {
+    "browserFlags": [
+      "--disable-gpu"
+    ],
+    "loaded": {
+      "backend": "wasm",
+      "dtype": "q8",
+      "reason": "WebGPU 不可用，自动降级 WASM INT8",
+      "adapterInfo": null,
+      "loadMs": 611.3200000226498,
+      "fetchSpanMs": 116.3449999988079,
+      "assets": [
+        {
+          "file": "/models/Xenova/all-MiniLM-L6-v2/tokenizer.json",
+          "durationMs": 9.034999996423721,
+          "transferBytes": 711961,
+          "encodedBytes": 711661,
+          "startMs": 50.24500000476837,
+          "endMs": 59.28000000119209
+        },
+        {
+          "file": "/models/Xenova/all-MiniLM-L6-v2/tokenizer_config.json",
+          "durationMs": 4.0999999940395355,
+          "transferBytes": 666,
+          "encodedBytes": 366,
+          "startMs": 50.46500000357628,
+          "endMs": 54.564999997615814
+        },
+        {
+          "file": "/models/Xenova/all-MiniLM-L6-v2/config.json",
+          "durationMs": 4.844999998807907,
+          "transferBytes": 950,
+          "encodedBytes": 650,
+          "startMs": 50.599999994039536,
+          "endMs": 55.44499999284744
+        },
+        {
+          "file": "/models/Xenova/all-MiniLM-L6-v2/onnx/model_quantized.onnx",
+          "durationMs": 104.00999999046326,
+          "transferBytes": 22972670,
+          "encodedBytes": 22972370,
+          "startMs": 62.58000001311302,
+          "endMs": 166.59000000357628
+        }
+      ],
+      "threads": 4
+    },
+    "count": 4,
+    "result": {
+      "name": "fallback_1793290840910",
+      "revision": 1,
+      "searchMs": 53.881400000012945,
+      "results": [
+        {
+          "id": "ae059a5752675f48f3dbfe34916485ba1fb35d0bc29da0922c90264609792569",
+          "text": "Water indoor plants only when the top two centimeters of soil feel dry. Yellow leaves and soggy soil often indicate overwatering. Use a pot with drainage holes.",
+          "metadata": {
+            "dtype": "q8",
+            "title": "Plant watering",
+            "source": "included-example",
+            "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+          },
+          "score": 0.0328
+        },
+        {
+          "id": "d5b44f39d9adf34c3e0f4f924eec890312355b97cee8abef950fe018703db00b",
+          "text": "A sourdough starter is a living culture of wild yeast and bacteria. Feed it equal weights of flour and water daily. A bubbly starter that doubles in size can raise bread without commercial yeast.",
+          "metadata": {
+            "dtype": "q8",
+            "title": "Sourdough bread",
+            "source": "included-example",
+            "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+          },
+          "score": 0.032
+        },
+        {
+          "id": "a01a2af7cdd7fe35fcf4500b73c7199c0cac9cc12eb83f47ce62e5cff7d2ce01",
+          "text": "Use regular database backups to recover from accidental deletion. Keep one backup offline and test restoration regularly. A backup is useful only if you can successfully restore its data.",
+          "metadata": {
+            "dtype": "q8",
+            "title": "Database backups",
+            "source": "included-example",
+            "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+          },
+          "score": 0.0318
+        },
+        {
+          "id": "ceaa6db8469bb412786d44b8a726cc5c49d649d3ba1cfeca092f03ac83598b51",
+          "text": "To repair a flat bicycle tire, remove the wheel and inspect the inner tube for a small hole. Roughen the rubber, apply glue, and press a patch firmly. Check the tire for sharp glass before reinstalling.",
+          "metadata": {
+            "dtype": "q8",
+            "title": "Bicycle puncture",
+            "source": "included-example",
+            "model_revision": "751bff37182d3f1213fa05d7196b954e230abad9"
+          },
+          "score": 0.0159
+        }
+      ],
+      "queryEmbeddingMs": 4.405000001192093,
+      "endToEndMs": 70.20999997854233,
+      "config": {
+        "backend": "wasm",
+        "dtype": "q8",
+        "reason": "WebGPU 不可用，自动降级 WASM INT8",
+        "adapterInfo": null,
+        "loadMs": 611.3200000226498,
+        "fetchSpanMs": 116.3449999988079,
+        "assets": [
+          {
+            "file": "/models/Xenova/all-MiniLM-L6-v2/tokenizer.json",
+            "durationMs": 9.034999996423721,
+            "transferBytes": 711961,
+            "encodedBytes": 711661,
+            "startMs": 50.24500000476837,
+            "endMs": 59.28000000119209
+          },
+          {
+            "file": "/models/Xenova/all-MiniLM-L6-v2/tokenizer_config.json",
+            "durationMs": 4.0999999940395355,
+            "transferBytes": 666,
+            "encodedBytes": 366,
+            "startMs": 50.46500000357628,
+            "endMs": 54.564999997615814
+          },
+          {
+            "file": "/models/Xenova/all-MiniLM-L6-v2/config.json",
+            "durationMs": 4.844999998807907,
+            "transferBytes": 950,
+            "encodedBytes": 650,
+            "startMs": 50.599999994039536,
+            "endMs": 55.44499999284744
+          },
+          {
+            "file": "/models/Xenova/all-MiniLM-L6-v2/onnx/model_quantized.onnx",
+            "durationMs": 104.00999999046326,
+            "transferBytes": 22972670,
+            "encodedBytes": 22972370,
+            "startMs": 62.58000001311302,
+            "endMs": 166.59000000357628
+          }
+        ],
+        "threads": 4
+      }
+    }
+  },
+  "completed": true
+}

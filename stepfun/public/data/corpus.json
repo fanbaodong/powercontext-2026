@@ -1,0 +1,199 @@
+{
+  "description": "Original English mini knowledge-base benchmark: 24 documents, 12 single-relevance queries. Not a general multilingual benchmark.",
+  "documents": [
+    {
+      "title": "Plant watering",
+      "text": "Water indoor plants only when the top two centimeters of soil feel dry. Yellow leaves and soggy soil often indicate overwatering. Use a pot with drainage holes.",
+      "source": "included-example"
+    },
+    {
+      "title": "Sourdough bread",
+      "text": "A sourdough starter is a living culture of wild yeast and bacteria. Feed it equal weights of flour and water daily. A bubbly starter that doubles in size can raise bread without commercial yeast.",
+      "source": "included-example"
+    },
+    {
+      "title": "Bicycle puncture",
+      "text": "To repair a flat bicycle tire, remove the wheel and inspect the inner tube for a small hole. Roughen the rubber, apply glue, and press a patch firmly. Check the tire for sharp glass before reinstalling.",
+      "source": "included-example"
+    },
+    {
+      "title": "Database backups",
+      "text": "Use regular database backups to recover from accidental deletion. Keep one backup offline and test restoration regularly. A backup is useful only if you can successfully restore its data.",
+      "source": "included-example"
+    },
+    {
+      "title": "Password security",
+      "text": "Protect accounts with a password manager and unique long passwords. Enable multi-factor authentication to reduce the impact of stolen credentials. Never reuse your email password on shopping websites.",
+      "source": "included-example"
+    },
+    {
+      "title": "Memory leaks",
+      "text": "A memory leak occurs when a program keeps references to objects it no longer needs. Monitor heap usage over time and inspect retained objects. Remove unused event listeners and clear old caches.",
+      "source": "included-example"
+    },
+    {
+      "title": "Coffee extraction",
+      "text": "If coffee tastes bitter, the grounds may be too fine or the brew time too long. A coarser grind and shorter extraction can reduce bitterness. Freshly roasted beans also affect flavor.",
+      "source": "included-example"
+    },
+    {
+      "title": "Sleep routine",
+      "text": "A consistent sleep schedule helps the body maintain its circadian rhythm. Avoid caffeine late in the afternoon and reduce bright screens before bed. Keep the bedroom dark and quiet.",
+      "source": "included-example"
+    },
+    {
+      "title": "Composting",
+      "text": "Compost converts food scraps and garden waste into nutrient-rich soil. Combine green materials such as vegetable peelings with dry leaves. Turn the pile to supply oxygen and avoid meat or oily food.",
+      "source": "included-example"
+    },
+    {
+      "title": "Solar panels",
+      "text": "Solar photovoltaic panels convert sunlight into electricity. Their output depends on sunlight, shading, and panel orientation. Batteries store excess daytime electricity for use at night.",
+      "source": "included-example"
+    },
+    {
+      "title": "Train tickets",
+      "text": "Booking train tickets early often provides cheaper fares. Check whether a ticket is refundable before purchasing. Allow enough connection time when changing trains at a large station.",
+      "source": "included-example"
+    },
+    {
+      "title": "Git undo",
+      "text": "Use git revert to undo a published commit by creating a new inverse commit. This preserves shared history. Avoid rewriting a branch that teammates have already pulled.",
+      "source": "included-example"
+    },
+    {
+      "title": "Vector search",
+      "text": "Vector search represents documents as numeric embeddings. Cosine distance measures similarity between normalized vectors. It can find relevant ideas even when the query uses different words.",
+      "source": "included-example"
+    },
+    {
+      "title": "Full text search",
+      "text": "Full-text search tokenizes words and retrieves documents containing matching terms. It is useful for exact names, product codes, and rare phrases. Hybrid search combines lexical and semantic retrieval.",
+      "source": "included-example"
+    },
+    {
+      "title": "Index refresh",
+      "text": "After importing new documents, refresh the database search indexes before querying. Batching writes and refreshing once reduces repeated work. Do not mark a collection ready if the refresh operation failed.",
+      "source": "included-example"
+    },
+    {
+      "title": "Bird migration",
+      "text": "Migratory birds travel seasonally between breeding and feeding grounds. Day length, weather, and food availability influence departure. Wetlands provide important resting places during long journeys.",
+      "source": "included-example"
+    },
+    {
+      "title": "Camera aperture",
+      "text": "A wider camera aperture uses a smaller f-number and creates a shallower depth of field. This blurs the background behind a portrait. A narrower aperture keeps more of a landscape in focus.",
+      "source": "included-example"
+    },
+    {
+      "title": "Emergency fund",
+      "text": "An emergency fund covers unexpected expenses without relying on high-interest borrowing. Keep it accessible and separate from everyday spending. The right size depends on income stability and essential costs.",
+      "source": "included-example"
+    },
+    {
+      "title": "Cooking rice",
+      "text": "Rinse rice to remove excess surface starch. Add water, bring to a boil, then cover and simmer gently. Let the rice rest with the lid on after cooking so moisture distributes evenly.",
+      "source": "included-example"
+    },
+    {
+      "title": "Rust prevention",
+      "text": "Rust forms when iron reacts with oxygen and moisture. Keep metal tools dry and apply a thin protective oil layer. Remove existing rust before repainting exposed metal surfaces.",
+      "source": "included-example"
+    },
+    {
+      "title": "Browser workers",
+      "text": "Web Workers run JavaScript tasks in a separate browser thread. They keep the interface responsive during expensive computation. Workers exchange messages and cannot directly modify the page DOM.",
+      "source": "included-example"
+    },
+    {
+      "title": "GPU fallback",
+      "text": "WebGPU can accelerate machine learning on the local graphics processor. If the adapter is unavailable or a model fails to initialize, use WebAssembly on the CPU. Clearly display which backend is actually running.",
+      "source": "included-example"
+    },
+    {
+      "title": "Cat enrichment",
+      "text": "Indoor cats benefit from scratching posts, climbing shelves, and short play sessions. Rotate toys to maintain interest. Puzzle feeders encourage natural hunting behavior without overfeeding.",
+      "source": "included-example"
+    },
+    {
+      "title": "Map navigation",
+      "text": "A compass points toward magnetic north. Combine compass direction with a paper map and visible landmarks when hiking. Download offline maps before traveling beyond mobile coverage.",
+      "source": "included-example"
+    }
+  ],
+  "queries": [
+    {
+      "text": "How can I avoid giving houseplants too much water?",
+      "relevantTitles": [
+        "Plant watering"
+      ]
+    },
+    {
+      "text": "My bicycle has a flat tire. How do I fix the hole?",
+      "relevantTitles": [
+        "Bicycle puncture"
+      ]
+    },
+    {
+      "text": "How can I recover data after deleting it by mistake?",
+      "relevantTitles": [
+        "Database backups"
+      ]
+    },
+    {
+      "text": "How do I undo a commit that my teammates already pulled?",
+      "relevantTitles": [
+        "Git undo"
+      ]
+    },
+    {
+      "text": "Why does my coffee taste too bitter?",
+      "relevantTitles": [
+        "Coffee extraction"
+      ]
+    },
+    {
+      "text": "How can I blur the background of a portrait photo?",
+      "relevantTitles": [
+        "Camera aperture"
+      ]
+    },
+    {
+      "text": "How can I stop my metal tools from getting rusty?",
+      "relevantTitles": [
+        "Rust prevention"
+      ]
+    },
+    {
+      "text": "How can I make bread rise using wild yeast?",
+      "relevantTitles": [
+        "Sourdough bread"
+      ]
+    },
+    {
+      "text": "What keeps a web page responsive during expensive calculations?",
+      "relevantTitles": [
+        "Browser workers"
+      ]
+    },
+    {
+      "text": "Which search method finds similar ideas with different wording?",
+      "relevantTitles": [
+        "Vector search"
+      ]
+    },
+    {
+      "text": "When will newly imported documents become searchable?",
+      "relevantTitles": [
+        "Index refresh"
+      ]
+    },
+    {
+      "text": "What should happen when a browser cannot use the GPU?",
+      "relevantTitles": [
+        "GPU fallback"
+      ]
+    }
+  ]
+}

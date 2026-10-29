@@ -1,0 +1,13 @@
+{
+  "browser": "156.0.4314.42",
+  "backend": "WEBGPU · FP16",
+  "collection": "ui_1793291058762",
+  "checks": [
+    "Create via UI",
+    "Paste text",
+    "Upload .txt",
+    "Incremental search",
+    "Reload restores collection",
+    "Original text displayed"
+  ]
+}

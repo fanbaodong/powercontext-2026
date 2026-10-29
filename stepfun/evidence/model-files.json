@@ -1,0 +1,56 @@
+{
+  "model": "Xenova/all-MiniLM-L6-v2",
+  "revision": "751bff37182d3f1213fa05d7196b954e230abad9",
+  "files": [
+    {
+      "file": "onnx/model.onnx",
+      "bytes": 90387606,
+      "hash": "759c3cd2b7fe7e93933ad23c4c9181b7396442a2ed746ec7c1d46192c469c46e"
+    },
+    {
+      "file": "onnx/model_fp16.onnx",
+      "bytes": 45297825,
+      "hash": "2cdb5e58291813b6d6e248ed69010100246821a367fa17b1b81ae9483744533d"
+    },
+    {
+      "file": "onnx/model_quantized.onnx",
+      "bytes": 22972370,
+      "hash": "afdb6f1a0e45b715d0bb9b11772f032c399babd23bfc31fed1c170afc848bdb1"
+    },
+    {
+      "file": "config.json",
+      "bytes": 650,
+      "hash": "72147e4ff4426ebedbfa2146c4a0999def51a313"
+    },
+    {
+      "file": "tokenizer.json",
+      "bytes": 711661,
+      "hash": "c17ed520ed8438736732a54957a69306b8822215"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "bytes": 366,
+      "hash": "37fca74771bc76a8e01178ce3a6055a0995f8093"
+    },
+    {
+      "file": "special_tokens_map.json",
+      "bytes": 125,
+      "hash": "a8b3208c2884c4efb86e49300fdd3dc877220cdf"
+    },
+    {
+      "file": "vocab.txt",
+      "bytes": 231508,
+      "hash": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+    }
+  ],
+  "totalBytesIncludingTokenizer": {
+    "fp32": 91331916,
+    "fp16": 46242135,
+    "q8": 23916680
+  },
+  "compressionRatio": {
+    "fp32": 1.0,
+    "fp16": 1.9750800000908262,
+    "q8": 3.8187539407643536
+  }
+}

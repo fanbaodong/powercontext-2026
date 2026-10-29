@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.runtime/
+.env
+public/models/
+__pycache__/
+*.local.json

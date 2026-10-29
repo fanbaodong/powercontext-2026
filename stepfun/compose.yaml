@@ -1,0 +1,13 @@
+services:
+  seekdb:
+    image: oceanbase/seekdb:1.4.0-100000172026082615
+    restart: unless-stopped
+    ports: ["127.0.0.1:2891:2881"]
+    environment:
+      ROOT_PASSWORD: ${SEEKDB_PASSWORD:?Set SEEKDB_PASSWORD in .env}
+      MEMORY_LIMIT: 2G
+      DATAFILE_SIZE: 512M
+      LOG_DISK_SIZE: 2G
+    volumes: ["stepfun_data:/var/lib/seekdb"]
+volumes:
+  stepfun_data:
