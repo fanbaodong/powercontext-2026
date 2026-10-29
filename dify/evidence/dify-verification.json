@@ -1,0 +1,476 @@
+{
+  "scope": "Actual Dify 1.9.1 import and workflow execution",
+  "app_id": "cdb6df9d-5e84-401f-9246-9e82ab0cabd7",
+  "runs": [
+    {
+      "action": "prank",
+      "player_id": "dify_ad00cd97fa88",
+      "nodes": [
+        {
+          "node_id": "start",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "request",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "turn",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "prepare",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "model",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "render",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "end",
+          "status": "succeeded",
+          "error": null
+        }
+      ],
+      "finish": {
+        "id": "37f21424-f5d4-401b-995b-4eb27635805e",
+        "workflow_id": "7b3649e8-a6f5-4450-94e8-9b27ef1aab8f",
+        "status": "succeeded",
+        "outputs": {
+          "answer": "# 记仇杂货铺\n\n> 老葛将价签换成了谜语，把价签换成谜语，获得 3 枚恶作剧硬币，信任 -2（信任实际变化 -2，上限 5、下限 -5）。\n\n### 本轮账单\n把价签换成了谜语，获得 3 枚恶作剧硬币，信任 -2（信任实际变化 -2，上限 5、下限 -5）\n\n| 回合 | 金币 | 信任 | 下一件价格 |\n| --- | --- | --- | --- |\n| 1 | 43 | -2 | 24 |\n\n**背包：** 还没有，货架上的怪东西在等你\n\n**目标：** 收集三件怪东西，解锁结局\n\n### 店主翻出的旧账（来自 seekdb）\n- 首次来店，账本里还没有旧事。\n\n下次可选：visit 进店看看 / prank 恶作剧（+3 金币、-2 信任） / help 帮忙（+5 金币、+1 信任） / apologize 道歉（-5 金币、+2 信任） / buy 买怪东西。信任限制为 -5 至 5。\n\n保持相同玩家代号即可跨次继续；更换新代号开始新存档。\n\nAI 店主对白（游戏数值以账本为准）"
+        },
+        "error": "",
+        "elapsed_time": 4.704968,
+        "total_tokens": 0,
+        "total_steps": 0,
+        "created_by": {
+          "id": "07eab3bc-a540-489a-9b28-58f3cd16c496",
+          "name": "杂货铺本地管理员",
+          "email": "shop-admin@example.com"
+        },
+        "created_at": 1793288486,
+        "finished_at": 1793288491,
+        "exceptions_count": 0,
+        "files": []
+      },
+      "ollama_generation": {
+        "model": "qwen3:0.6b",
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 404,
+        "eval_count": 48,
+        "total_duration": 4092072844
+      },
+      "persisted_seekdb_state": {
+        "player_id": "dify_ad00cd97fa88",
+        "coins": 43,
+        "trust": -2,
+        "turn": 1,
+        "inventory": []
+      },
+      "state_assertions": "passed"
+    },
+    {
+      "action": "visit",
+      "player_id": "dify_ad00cd97fa88",
+      "nodes": [
+        {
+          "node_id": "start",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "request",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "turn",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "prepare",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "model",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "render",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "end",
+          "status": "succeeded",
+          "error": null
+        }
+      ],
+      "finish": {
+        "id": "97f71eed-9142-4c60-9029-b5c477349f57",
+        "workflow_id": "7b3649e8-a6f5-4450-94e8-9b27ef1aab8f",
+        "status": "succeeded",
+        "outputs": {
+          "answer": "# 记仇杂货铺\n\n> 老葛从柜台后抬起头，露出一贯的神情：“你来得正好。”他从口袋里拿出一把银色防恶作剧头盔，戴上后仔细端详。老板，你还记得我做过什么吗？\n\n### 本轮账单\n进店看看，金币和信任不变\n\n| 回合 | 金币 | 信任 | 下一件价格 |\n| --- | --- | --- | --- |\n| 2 | 43 | -2 | 24 |\n\n**背包：** 还没有，货架上的怪东西在等你\n\n**目标：** 收集三件怪东西，解锁结局\n\n### 店主翻出的旧账（来自 seekdb）\n- 第 1 回合：把价签换成了谜语，获得 3 枚恶作剧硬币，信任 -2（信任实际变化 -2，上限 5、下限 -5）\n\n下次可选：visit 进店看看 / prank 恶作剧（+3 金币、-2 信任） / help 帮忙（+5 金币、+1 信任） / apologize 道歉（-5 金币、+2 信任） / buy 买怪东西。信任限制为 -5 至 5。\n\n保持相同玩家代号即可跨次继续；更换新代号开始新存档。\n\nAI 店主对白（游戏数值以账本为准）"
+        },
+        "error": "",
+        "elapsed_time": 3.083292,
+        "total_tokens": 0,
+        "total_steps": 0,
+        "created_by": {
+          "id": "07eab3bc-a540-489a-9b28-58f3cd16c496",
+          "name": "杂货铺本地管理员",
+          "email": "shop-admin@example.com"
+        },
+        "created_at": 1793288491,
+        "finished_at": 1793288494,
+        "exceptions_count": 0,
+        "files": []
+      },
+      "ollama_generation": {
+        "model": "qwen3:0.6b",
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 426,
+        "eval_count": 48,
+        "total_duration": 2790642021
+      },
+      "persisted_seekdb_state": {
+        "player_id": "dify_ad00cd97fa88",
+        "coins": 43,
+        "trust": -2,
+        "turn": 2,
+        "inventory": []
+      },
+      "state_assertions": "passed"
+    },
+    {
+      "action": "apologize",
+      "player_id": "dify_ad00cd97fa88",
+      "nodes": [
+        {
+          "node_id": "start",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "request",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "turn",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "prepare",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "model",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "render",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "end",
+          "status": "succeeded",
+          "error": null
+        }
+      ],
+      "finish": {
+        "id": "de6959ba-7322-47dc-86e5-5a44c209b5bf",
+        "workflow_id": "7b3649e8-a6f5-4450-94e8-9b27ef1aab8f",
+        "status": "succeeded",
+        "outputs": {
+          "answer": "# 记仇杂货铺\n\n> 老葛抬起头，眼神里带着一丝歉意：“你喝汽水我记着呢，但这次可不能这样……”他从口袋里掏出一瓶汽水，轻轻倒进杯子里，“我对你过去的事情一直记着，但这次……”他叹了口气，继续说道，“请你喝汽水赔礼。”\n\n### 本轮账单\n花 5 金币请老葛喝了道歉汽水，信任 +2（信任实际变化 +2，上限 5、下限 -5）\n\n| 回合 | 金币 | 信任 | 下一件价格 |\n| --- | --- | --- | --- |\n| 3 | 38 | 0 | 20 |\n\n**背包：** 还没有，货架上的怪东西在等你\n\n**目标：** 收集三件怪东西，解锁结局\n\n### 店主翻出的旧账（来自 seekdb）\n- 第 1 回合：把价签换成了谜语，获得 3 枚恶作剧硬币，信任 -2（信任实际变化 -2，上限 5、下限 -5）\n- 第 2 回合：进店看看，金币和信任不变\n\n下次可选：visit 进店看看 / prank 恶作剧（+3 金币、-2 信任） / help 帮忙（+5 金币、+1 信任） / apologize 道歉（-5 金币、+2 信任） / buy 买怪东西。信任限制为 -5 至 5。\n\n保持相同玩家代号即可跨次继续；更换新代号开始新存档。\n\nAI 店主对白（游戏数值以账本为准）"
+        },
+        "error": "",
+        "elapsed_time": 4.223951,
+        "total_tokens": 0,
+        "total_steps": 0,
+        "created_by": {
+          "id": "07eab3bc-a540-489a-9b28-58f3cd16c496",
+          "name": "杂货铺本地管理员",
+          "email": "shop-admin@example.com"
+        },
+        "created_at": 1793288494,
+        "finished_at": 1793288498,
+        "exceptions_count": 0,
+        "files": []
+      },
+      "ollama_generation": {
+        "model": "qwen3:0.6b",
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 465,
+        "eval_count": 68,
+        "total_duration": 3933757494
+      },
+      "persisted_seekdb_state": {
+        "player_id": "dify_ad00cd97fa88",
+        "coins": 38,
+        "trust": 0,
+        "turn": 3,
+        "inventory": []
+      },
+      "state_assertions": "passed"
+    },
+    {
+      "action": "help",
+      "player_id": "dify_ad00cd97fa88",
+      "nodes": [
+        {
+          "node_id": "start",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "request",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "turn",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "prepare",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "model",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "render",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "end",
+          "status": "succeeded",
+          "error": null
+        }
+      ],
+      "finish": {
+        "id": "b974f0dd-c557-4dfa-b5c2-e07845efb206",
+        "workflow_id": "7b3649e8-a6f5-4450-94e8-9b27ef1aab8f",
+        "status": "succeeded",
+        "outputs": {
+          "answer": "# 记仇杂货铺\n\n> 老葛推来一把会自己鼓掌的小椅子。帮忙把会飞的价签按回货架，金币 +5，信任 +1（信任实际变化 +1，上限 5、下限 -5）。\n\n### 本轮账单\n帮忙把会飞的价签按回货架，金币 +5，信任 +1（信任实际变化 +1，上限 5、下限 -5）\n\n| 回合 | 金币 | 信任 | 下一件价格 |\n| --- | --- | --- | --- |\n| 4 | 43 | 1 | 18 |\n\n**背包：** 还没有，货架上的怪东西在等你\n\n**目标：** 收集三件怪东西，解锁结局\n\n### 店主翻出的旧账（来自 seekdb）\n- 第 1 回合：把价签换成了谜语，获得 3 枚恶作剧硬币，信任 -2（信任实际变化 -2，上限 5、下限 -5）\n- 第 2 回合：进店看看，金币和信任不变\n- 第 3 回合：花 5 金币请老葛喝了道歉汽水，信任 +2（信任实际变化 +2，上限 5、下限 -5）\n\n下次可选：visit 进店看看 / prank 恶作剧（+3 金币、-2 信任） / help 帮忙（+5 金币、+1 信任） / apologize 道歉（-5 金币、+2 信任） / buy 买怪东西。信任限制为 -5 至 5。\n\n保持相同玩家代号即可跨次继续；更换新代号开始新存档。\n\nAI 店主对白（游戏数值以账本为准）"
+        },
+        "error": "",
+        "elapsed_time": 3.443912,
+        "total_tokens": 0,
+        "total_steps": 0,
+        "created_by": {
+          "id": "07eab3bc-a540-489a-9b28-58f3cd16c496",
+          "name": "杂货铺本地管理员",
+          "email": "shop-admin@example.com"
+        },
+        "created_at": 1793288498,
+        "finished_at": 1793288502,
+        "exceptions_count": 0,
+        "files": []
+      },
+      "ollama_generation": {
+        "model": "qwen3:0.6b",
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 538,
+        "eval_count": 47,
+        "total_duration": 3180562918
+      },
+      "persisted_seekdb_state": {
+        "player_id": "dify_ad00cd97fa88",
+        "coins": 43,
+        "trust": 1,
+        "turn": 4,
+        "inventory": []
+      },
+      "state_assertions": "passed"
+    },
+    {
+      "action": "buy",
+      "player_id": "dify_ad00cd97fa88",
+      "nodes": [
+        {
+          "node_id": "start",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "request",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "turn",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "prepare",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "model",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "render",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "end",
+          "status": "succeeded",
+          "error": null
+        }
+      ],
+      "finish": {
+        "id": "402d5def-554a-45da-9566-2862f5a53604",
+        "workflow_id": "7b3649e8-a6f5-4450-94e8-9b27ef1aab8f",
+        "status": "succeeded",
+        "outputs": {
+          "answer": "# 记仇杂货铺\n\n> {\"state\": {\"player_id\": \"dify_ad00cd97fa88\", \"coins\": 25, \"trust\": 1, \"turn\": 5, \"inventory\": [\"会打嗝的月亮\"], \"next_price\": 18, \"ending\": \"收集三件怪东西，解锁结局\"}, \"action\": \"买件怪东西\", \"outcome\": \"用 18 金币买到了「会打嗝的月亮」\", \"memories\": [{\"turn\": 1, \"action\": \"prank\", \"memory\": \"把价签换成了谜语，获得 3 枚恶作剧硬币，信任 -2（信任实际变化 -2，上限 5、下限 -5）\"}, {\"turn\": 2, \"action\": \"visit\", \"memory\": \"进店看看，金币和信任不变\"}, {\"turn\": 3, \"action\": \"apologize\", \"memory\": \"花 5 金币请老葛喝了道歉汽水，信任 +2（信任实际变化 +2，上限 5、下限 -5）\"}, {\"turn\": 4, \"action\": \"help\", \"memory\": \"帮忙把会飞的\n\n### 本轮账单\n用 18 金币买到了「会打嗝的月亮」\n\n| 回合 | 金币 | 信任 | 下一件价格 |\n| --- | --- | --- | --- |\n| 5 | 25 | 1 | 18 |\n\n**背包：** 会打嗝的月亮\n\n**目标：** 收集三件怪东西，解锁结局\n\n### 店主翻出的旧账（来自 seekdb）\n- 第 1 回合：把价签换成了谜语，获得 3 枚恶作剧硬币，信任 -2（信任实际变化 -2，上限 5、下限 -5）\n- 第 2 回合：进店看看，金币和信任不变\n- 第 3 回合：花 5 金币请老葛喝了道歉汽水，信任 +2（信任实际变化 +2，上限 5、下限 -5）\n- 第 4 回合：帮忙把会飞的价签按回货架，金币 +5，信任 +1（信任实际变化 +1，上限 5、下限 -5）\n\n下次可选：visit 进店看看 / prank 恶作剧（+3 金币、-2 信任） / help 帮忙（+5 金币、+1 信任） / apologize 道歉（-5 金币、+2 信任） / buy 买怪东西。信任限制为 -5 至 5。\n\n保持相同玩家代号即可跨次继续；更换新代号开始新存档。\n\nAI 店主对白（游戏数值以账本为准）"
+        },
+        "error": "",
+        "elapsed_time": 12.280017,
+        "total_tokens": 0,
+        "total_steps": 0,
+        "created_by": {
+          "id": "07eab3bc-a540-489a-9b28-58f3cd16c496",
+          "name": "杂货铺本地管理员",
+          "email": "shop-admin@example.com"
+        },
+        "created_at": 1793288502,
+        "finished_at": 1793288514,
+        "exceptions_count": 0,
+        "files": []
+      },
+      "ollama_generation": {
+        "model": "qwen3:0.6b",
+        "done": true,
+        "done_reason": "length",
+        "prompt_eval_count": 566,
+        "eval_count": 256,
+        "total_duration": 10893910968
+      },
+      "persisted_seekdb_state": {
+        "player_id": "dify_ad00cd97fa88",
+        "coins": 25,
+        "trust": 1,
+        "turn": 5,
+        "inventory": [
+          "会打嗝的月亮"
+        ]
+      },
+      "state_assertions": "passed"
+    },
+    {
+      "action": "visit",
+      "player_id": "dify_ad00cd97fa88_new",
+      "nodes": [
+        {
+          "node_id": "start",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "request",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "turn",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "prepare",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "model",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "render",
+          "status": "succeeded",
+          "error": null
+        },
+        {
+          "node_id": "end",
+          "status": "succeeded",
+          "error": null
+        }
+      ],
+      "finish": {
+        "id": "68289179-e7fc-475e-84d6-aec4ae87fddb",
+        "workflow_id": "7b3649e8-a6f5-4450-94e8-9b27ef1aab8f",
+        "status": "succeeded",
+        "outputs": {
+          "answer": "# 记仇杂货铺\n\n> {\"state\": {\"player_id\": \"dify_ad00cd97fa88_new\", \"coins\": 40, \"trust\": 0, \"turn\": 1, \"inventory\": [], \"next_price\": 20, \"ending\": \"收集三件怪东西，解锁结局\"}, \"action\": \"进店看看\", \"outcome\": \"进店看看，金币和信任不变\", \"memories\": [], \"player_message\": \"第一次来，请多关照。\"}\n\n### 本轮账单\n进店看看，金币和信任不变\n\n| 回合 | 金币 | 信任 | 下一件价格 |\n| --- | --- | --- | --- |\n| 1 | 40 | 0 | 20 |\n\n**背包：** 还没有，货架上的怪东西在等你\n\n**目标：** 收集三件怪东西，解锁结局\n\n### 店主翻出的旧账（来自 seekdb）\n- 首次来店，账本里还没有旧事。\n\n下次可选：visit 进店看看 / prank 恶作剧（+3 金币、-2 信任） / help 帮忙（+5 金币、+1 信任） / apologize 道歉（-5 金币、+2 信任） / buy 买怪东西。信任限制为 -5 至 5。\n\n保持相同玩家代号即可跨次继续；更换新代号开始新存档。\n\nAI 店主对白（游戏数值以账本为准）"
+        },
+        "error": "",
+        "elapsed_time": 4.266259,
+        "total_tokens": 0,
+        "total_steps": 0,
+        "created_by": {
+          "id": "07eab3bc-a540-489a-9b28-58f3cd16c496",
+          "name": "杂货铺本地管理员",
+          "email": "shop-admin@example.com"
+        },
+        "created_at": 1793288514,
+        "finished_at": 1793288518,
+        "exceptions_count": 0,
+        "files": []
+      },
+      "ollama_generation": {
+        "model": "qwen3:0.6b",
+        "done": true,
+        "done_reason": "stop",
+        "prompt_eval_count": 338,
+        "eval_count": 105,
+        "total_duration": 4018727995
+      },
+      "persisted_seekdb_state": {
+        "player_id": "dify_ad00cd97fa88_new",
+        "coins": 40,
+        "trust": 0,
+        "turn": 1,
+        "inventory": []
+      },
+      "state_assertions": "passed"
+    }
+  ]
+}

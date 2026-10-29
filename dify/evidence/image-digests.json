@@ -1,0 +1,12 @@
+{
+  "source": "Docker Hub registry API; manifest digest verification",
+  "images": {
+    "langgenius/dify-web:1.9.1": "sha256:53af9883e89e96eac6885a9519c5230d89ba112855d6f98b0d907656e02ead81",
+    "langgenius/dify-sandbox:0.2.12": "sha256:4e65e8a351a2b17d11750b65403527a347e5cb938bc2271521ca7d689c008ad3",
+    "langgenius/dify-plugin-daemon:0.3.0-local": "sha256:22fb3bed3803b094b779a1db2684797e2feeae339f9612273fec7db14ecd03cd",
+    "oceanbase/seekdb:1.4.0-100000172026082615": "sha256:4db4961869d554313520d6081fca29265ba6da6db7313311bd8acbed771a956b",
+    "ollama/ollama:0.11.10": "sha256:a5409cb903d30f9cd67e9f430dd336ddc9274e16fd78f75b675c42065991b4fd",
+    "library/python:3.12-slim": "sha256:aa943ce411423c7582288f18707ff66eddcbaeb510502d747a72aeb34f30d159",
+    "langgenius/dify-api:1.9.1": "sha256:c38936ee0149f8fabfb5f02ac716c545aa758ceef78c2369c733a86f8713aad4"
+  }
+}
