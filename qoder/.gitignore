@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Local Qoder hosting bindings and private operation receipts
+.qoder/
+.qoder.site
+.sites-work/
+_sites_cli.sh
+evidence/*-local.json

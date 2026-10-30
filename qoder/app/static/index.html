@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研读台 ReadTrace</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 侧栏 -->
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <h1>研读台</h1>
+                <span class="subtitle">ReadTrace</span>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="section-title">
+                    <span>研究项目</span>
+                    <button id="btn-new-project" class="btn-icon" title="新建项目">+</button>
+                </div>
+                <div id="project-list" class="project-list"></div>
+            </div>
+
+            <div class="sidebar-section" id="stats-section" style="display:none;">
+                <div class="section-title"><span>阅读统计</span></div>
+                <div id="stats-panel" class="stats-panel"></div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div id="health-indicator" class="health-indicator">
+                    <span class="dot"></span>
+                    <span class="text">检测中...</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main id="content">
+            <!-- 空状态 -->
+            <div id="empty-state" class="empty-state">
+                <div class="empty-icon">📚</div>
+                <h2>欢迎使用研读台</h2>
+                <p>选择或创建一个研究项目开始使用</p>
+                <p class="hint">导入资料 → 全文检索 → 收藏证据卡片 → 导出笔记</p>
+            </div>
+
+            <!-- 标签页导航 -->
+            <div id="tab-nav" class="tab-nav" style="display:none;">
+                <button class="tab-btn active" data-tab="library">文库</button>
+                <button class="tab-btn" data-tab="search">检索</button>
+                <button class="tab-btn" data-tab="cards">证据卡片</button>
+            </div>
+
+            <!-- 文库页 -->
+            <div id="tab-library" class="tab-content" style="display:none;">
+                <div class="tab-header">
+                    <h2>文库</h2>
+                    <button id="btn-import" class="btn-primary">导入资料</button>
+                </div>
+                <div id="document-list" class="document-list"></div>
+            </div>
+
+            <!-- 检索页 -->
+            <div id="tab-search" class="tab-content" style="display:none;">
+                <div class="tab-header">
+                    <h2>全文检索</h2>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="输入关键字搜索本项目原文..." autocomplete="off">
+                    <button id="btn-search" class="btn-primary">搜索</button>
+                </div>
+                <div id="search-hint" class="search-hint">输入关键字后按回车或点击搜索，仅在本项目范围内检索原文段落</div>
+                <div id="search-results" class="search-results"></div>
+            </div>
+
+            <!-- 卡片页 -->
+            <div id="tab-cards" class="tab-content" style="display:none;">
+                <div class="tab-header">
+                    <h2>证据卡片</h2>
+                    <button id="btn-export" class="btn-secondary">导出 Markdown</button>
+                </div>
+                <div id="card-list" class="card-list"></div>
+            </div>
+
+            <!-- 文档详情 -->
+            <div id="tab-detail" class="tab-content" style="display:none;">
+                <div class="tab-header">
+                    <button id="btn-back" class="btn-secondary">← 返回</button>
+                    <h2 id="detail-title"></h2>
+                    <div class="detail-actions">
+                        <select id="detail-progress">
+                            <option value="unread">未读</option>
+                            <option value="reading">在读</option>
+                            <option value="read">已读</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="detail-meta" class="detail-meta"></div>
+                <div id="detail-chunks" class="detail-chunks"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 导入弹窗 -->
+    <div id="modal-import" class="modal" style="display:none;">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>导入资料</h3>
+                <button class="btn-close" data-close="modal-import">×</button>
+            </div>
+            <form id="form-import">
+                <div class="form-group">
+                    <label>标题 <span class="required">*</span></label>
+                    <input type="text" name="title" required maxlength="500" placeholder="资料标题">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>作者</label>
+                        <input type="text" name="author" maxlength="255" placeholder="可选">
+                    </div>
+                    <div class="form-group">
+                        <label>来源 URL</label>
+                        <input type="url" name="source_url" maxlength="2000" placeholder="https://...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>标签</label>
+                    <input type="text" name="tags" maxlength="1000" placeholder="逗号分隔，如：学习方法,笔记术">
+                </div>
+                <div class="form-group">
+                    <label>内容 <span class="required">*</span></label>
+                    <div class="import-tabs">
+                        <button type="button" class="import-tab active" data-mode="paste">粘贴文本</button>
+                        <button type="button" class="import-tab" data-mode="upload">上传文件</button>
+                    </div>
+                    <textarea name="content" id="import-textarea" rows="10" placeholder="粘贴资料内容..." required></textarea>
+                    <input type="file" name="file" id="import-file" accept=".txt,.md" style="display:none;">
+                    <div class="form-hint">支持 .txt / .md 文件，最大 10MB</div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" data-close="modal-import">取消</button>
+                    <button type="submit" class="btn-primary">导入</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 新建项目弹窗 -->
+    <div id="modal-project" class="modal" style="display:none;">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-sm">
+            <div class="modal-header">
+                <h3>新建研究项目</h3>
+                <button class="btn-close" data-close="modal-project">×</button>
+            </div>
+            <form id="form-project">
+                <div class="form-group">
+                    <label>项目名称 <span class="required">*</span></label>
+                    <input type="text" name="name" required maxlength="255" placeholder="如：毕业论文资料">
+                </div>
+                <div class="form-group">
+                    <label>描述</label>
+                    <textarea name="description" rows="3" maxlength="2000" placeholder="可选"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" data-close="modal-project">取消</button>
+                    <button type="submit" class="btn-primary">创建</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 批注弹窗 -->
+    <div id="modal-annotation" class="modal" style="display:none;">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-sm">
+            <div class="modal-header">
+                <h3>添加批注</h3>
+                <button class="btn-close" data-close="modal-annotation">×</button>
+            </div>
+            <form id="form-annotation">
+                <input type="hidden" name="document_id" id="anno-doc-id">
+                <input type="hidden" name="chunk_id" id="anno-chunk-id">
+                <div class="form-group">
+                    <label>批注内容</label>
+                    <textarea name="annotation" id="anno-text" rows="4" maxlength="5000" placeholder="写下你的想法..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" data-close="modal-annotation">取消</button>
+                    <button type="submit" class="btn-primary">保存卡片</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

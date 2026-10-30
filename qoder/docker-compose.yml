@@ -1,0 +1,21 @@
+version: "3.8"
+
+# 仅提供 seekdb 数据库容器；应用从本机 venv 运行。
+
+services:
+  seekdb:
+    image: oceanbase/seekdb:1.4.0-100000172026082615
+    container_name: readtrace-seekdb
+    ports:
+      - "127.0.0.1:${DB_PORT:-2896}:2881"
+    environment:
+      ROOT_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
+      MEMORY_LIMIT: "2G"
+      DATAFILE_SIZE: "512M"
+      LOG_DISK_SIZE: "2G"
+    volumes:
+      - seekdb_data:/var/lib/seekdb
+    restart: unless-stopped
+
+volumes:
+  seekdb_data:

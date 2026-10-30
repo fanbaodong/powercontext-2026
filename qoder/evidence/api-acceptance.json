@@ -1,0 +1,115 @@
+{
+  "suite": "Independent HTTP acceptance against real seekdb",
+  "checks": [
+    {
+      "check": "Real seekdb health",
+      "passed": true
+    },
+    {
+      "check": "Short paragraphs and CRLF preserved",
+      "passed": true
+    },
+    {
+      "check": "Same-project duplicate is idempotent",
+      "passed": true
+    },
+    {
+      "check": "Cross-project copies are independent",
+      "passed": true
+    },
+    {
+      "check": "Long Chinese keyword uses actual FTS",
+      "passed": true
+    },
+    {
+      "check": "FTS results stay in selected project",
+      "passed": true
+    },
+    {
+      "check": "Empty search has no synthetic hits",
+      "passed": true
+    },
+    {
+      "check": "Whitespace project name rejected",
+      "passed": true
+    },
+    {
+      "check": "Whitespace document title rejected",
+      "passed": true
+    },
+    {
+      "check": "Whitespace document content rejected",
+      "passed": true
+    },
+    {
+      "check": "Nonexistent project rejected",
+      "passed": true
+    },
+    {
+      "check": "Javascript source rejected",
+      "passed": true
+    },
+    {
+      "check": "UTF-8 Markdown upload",
+      "passed": true
+    },
+    {
+      "check": "Unsupported extension rejected",
+      "passed": true
+    },
+    {
+      "check": "Invalid UTF-8 rejected",
+      "passed": true
+    },
+    {
+      "check": "Upload URL validated",
+      "passed": true
+    },
+    {
+      "check": "Oversized upload rejected",
+      "passed": true
+    },
+    {
+      "check": "Cross-project card references rejected",
+      "passed": true
+    },
+    {
+      "check": "Mismatched document and chunk rejected",
+      "passed": true
+    },
+    {
+      "check": "JSON annotation update persists",
+      "passed": true
+    },
+    {
+      "check": "Unchanged annotation update succeeds",
+      "passed": true
+    },
+    {
+      "check": "Oversized annotation rejected",
+      "passed": true
+    },
+    {
+      "check": "Markdown contains original source and annotation",
+      "passed": true
+    },
+    {
+      "check": "Reading progress saved",
+      "passed": true
+    },
+    {
+      "check": "Reading statistics query executes",
+      "passed": true
+    },
+    {
+      "check": "Concurrent duplicate imports remain atomic",
+      "passed": true
+    },
+    {
+      "check": "Failed import leaves no partial document",
+      "passed": true
+    }
+  ],
+  "passed": 27,
+  "failed": 0
+}

@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "method": "Write through HTTP; terminate and relaunch uvicorn; read through HTTP",
+  "document_persisted": true,
+  "annotation_persisted": true,
+  "reading_status_persisted": true
+}

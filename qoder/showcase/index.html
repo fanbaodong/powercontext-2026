@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研读台 ReadTrace - 项目展示</title>
+    <style>
+        :root {
+            --sidebar-bg: #1a2332;
+            --accent: #00b894;
+            --primary: #2d6cdf;
+            --content-bg: #faf8f5;
+            --card-bg: #ffffff;
+            --text: #2d3436;
+            --text-light: #636e72;
+            --border: #e8e4df;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--content-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: var(--sidebar-bg);
+            color: #fff;
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 24px;
+        }
+
+        .hero .tagline {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--text);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: 0.2s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .workflow {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .workflow-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: var(--content-bg);
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .step .num {
+            width: 28px;
+            height: 28px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .arrow {
+            color: var(--text-light);
+            font-size: 20px;
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .tech-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .tech-item .name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .tech-item .desc {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .cta {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--sidebar-bg);
+            color: #fff;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .cta h2 {
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 24px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .cta .btn:hover {
+            background: #00a381;
+        }
+
+        .note {
+            background: rgba(0, 184, 148, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 24px 0;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-light);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .screenshot-item {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--card-bg);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .screenshot-item .caption {
+            padding: 12px 16px;
+            font-size: 14px;
+            color: var(--text-light);
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .seekdb-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 24px;
+        }
+
+        .seekdb-section h3 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .seekdb-section code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        .seekdb-section pre {
+            background: var(--sidebar-bg);
+            color: #e0e0e0;
+            padding: 16px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 12px 0;
+        }
+
+        .verification-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(0, 184, 148, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            margin: 8px 4px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero .tagline { font-size: 16px; }
+            .section { padding: 40px 0; }
+            .workflow { padding: 24px; }
+            .arrow { display: none; }
+            .screenshot-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>研读台</h1>
+        <div class="subtitle">ReadTrace</div>
+        <div class="tagline">本地单人资料工作台 — 导入 · 检索 · 收藏 · 导出</div>
+        <div class="badge">2026 OceanBase 数据库大赛参赛作品</div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>解决什么问题</h2>
+            <div class="seekdb-section">
+                <h3>科研阅读中的三个痛点</h3>
+                <div class="features" style="margin-top:16px;">
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128269;</div>
+                        <h3>找不到</h3>
+                        <p>读过的论文段落模糊记得有用，但翻遍笔记也定位不到原文出处。Ctrl+F 只能搜精确匹配，无法处理同义词和语义变体。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128279;</div>
+                        <h3>链不上</h3>
+                        <p>手动复制原文到笔记后，丢失了 document_id、段落编号等出处信息。写论文时无法快速回溯引用来源。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128202;</div>
+                        <h3>追不动</h3>
+                        <p>没有阅读进度管理，不知道哪些文献已读、哪些在读。多项目并行时资料混杂，无法隔离。</p>
+                    </div>
+                </div>
+                <p style="margin-top:20px; color:var(--text);"><strong>研读台的方案：</strong>导入资料自动切块存入 seekdb → FULLTEXT ngram 全文检索定位原段落 → 收藏为带出处的证据卡片 → 追踪阅读进度 → 一键导出带引用的 Markdown 笔记。所有数据本地持久化，刷新不丢失。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>核心功能</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3>研究项目管理</h3>
+                    <p>创建和切换多个研究项目，数据完全隔离。每个项目独立的文库、检索和卡片空间。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📥</div>
+                    <h3>资料导入</h3>
+                    <p>粘贴文本或上传 .txt/.md 文件。自动按段落切块，保存段落编号和内容哈希。重复导入幂等处理。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>全文检索</h3>
+                    <p>基于 seekdb FULLTEXT 索引的真实关键字搜索。展示标题、原段落、段落编号和相关性得分。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🃏</div>
+                    <h3>证据卡片</h3>
+                    <p>收藏原文段落并添加批注。卡片保存 document_id/chunk_id 出处，支持 Markdown 导出。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>阅读进度</h3>
+                    <p>每篇资料的未读/在读/已读状态管理。项目级统计面板。刷新和重启后数据持久化。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>笔记导出</h3>
+                    <p>导出带引用的 Markdown 笔记。包含标题、原文、批注、来源和段落号。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>工作流程</h2>
+            <div class="workflow">
+                <div class="workflow-steps">
+                    <div class="step"><span class="num">1</span> 导入资料</div>
+                    <span class="arrow">→</span>
+                    <div class="step"><span class="num">2</span> 全文检索</div>
+                    <span class="arrow">→</span>
+                    <div class="step"><span class="num">3</span> 定位原段落</div>
+                    <span class="arrow">→</span>
+                    <div class="step"><span class="num">4</span> 收藏卡片</div>
+                    <span class="arrow">→</span>
+                    <div class="step"><span class="num">5</span> 添加批注</div>
+                    <span class="arrow">→</span>
+                    <div class="step"><span class="num">6</span> 导出笔记</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>技术栈</h2>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <div class="name">Python 3.10+</div>
+                    <div class="desc">后端编程语言</div>
+                </div>
+                <div class="tech-item">
+                    <div class="name">FastAPI</div>
+                    <div class="desc">Web 框架</div>
+                </div>
+                <div class="tech-item">
+                    <div class="name">seekdb</div>
+                    <div class="desc">OceanBase MySQL 兼容</div>
+                </div>
+                <div class="tech-item">
+                    <div class="name">PyMySQL</div>
+                    <div class="desc">数据库驱动</div>
+                </div>
+                <div class="tech-item">
+                    <div class="name">原生 HTML/CSS/JS</div>
+                    <div class="desc">前端，无框架依赖</div>
+                </div>
+                <div class="tech-item">
+                    <div class="name">Docker Compose</div>
+                    <div class="desc">容器化部署</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>真实界面截图</h2>
+            <p style="text-align:center; color:var(--text-light); margin-bottom:24px;">以下截图来自主机真实运行 seekdb + 本机 uvicorn 的浏览器截图，非模拟。</p>
+            <div class="screenshot-grid">
+                <div class="screenshot-item">
+                    <img src="assets/library.png" alt="文库列表界面" loading="lazy">
+                    <div class="caption">文库列表 — 导入文档后按段落切块，显示 chunk_count 和阅读状态</div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="assets/search.png" alt="全文检索界面" loading="lazy">
+                    <div class="caption">全文检索 — seekdb FULLTEXT MATCH...AGAINST(NATURAL LANGUAGE MODE) 返回相关性得分</div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="assets/cards.png" alt="证据卡片界面" loading="lazy">
+                    <div class="caption">证据卡片 — 收藏原文段落并添加批注，保留 document_id/chunk_id 出处链</div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="assets/mobile.png" alt="移动端适配" loading="lazy">
+                    <div class="caption">移动端适配 — 响应式布局在小屏设备上自动调整</div>
+                </div>
+            </div>
+            <div class="note" style="margin-top:24px;">
+                <strong>本地单人应用声明：</strong>研读台是本地单人资料工作台，绑定 127.0.0.1 运行，不暴露数据库或 API 到公网。本展示页是静态评审展示入口，不提供在线体验功能。
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>seekdb 在本项目中的核心作用</h2>
+            <div class="seekdb-section">
+                <h3>持久存储 + 全文检索一体化</h3>
+                <p>seekdb 作为 OceanBase MySQL 兼容模式的分布式数据库，在本项目中同时承担<strong>持久化存储</strong>和<strong>全文检索引擎</strong>两个核心角色：</p>
+                <ul style="margin:16px 0; padding-left:24px; color:var(--text-light);">
+                    <li><strong>5 张表</strong>：projects / documents / chunks / cards / reading_progress，全部 InnoDB 引擎，外键级联删除</li>
+                    <li><strong>FULLTEXT 索引</strong>：chunks 表使用 <code>WITH PARSER ngram</code> 分词器，支持中文全文检索</li>
+                    <li><strong>NATURAL LANGUAGE MODE</strong>：实测 "间隔重复" 在 NATURAL LANGUAGE MODE 下命中 4 行（BOOLEAN MODE 返回 0）</li>
+                    <li><strong>幂等导入</strong>：documents 表 <code>UNIQUE(project_id, content_hash)</code> + SHA-256 去重</li>
+                    <li><strong>事务原子性</strong>：autocommit=False，显式 commit/rollback，导入失败全部回滚</li>
+                </ul>
+                <p style="margin-top:12px;">核心检索 SQL：</p>
+<pre>SELECT c.id AS chunk_id, c.document_id, c.paragraph_number, c.content,
+       d.title AS document_title,
+       MATCH(c.content) AGAINST(? IN NATURAL LANGUAGE MODE) AS relevance
+FROM chunks c
+JOIN documents d ON c.document_id = d.id
+WHERE d.project_id = ?
+  AND MATCH(c.content) AGAINST(? IN NATURAL LANGUAGE MODE)
+ORDER BY relevance DESC
+LIMIT ?</pre>
+                <p style="margin-top:12px;">实测验证：主机运行 <code>scripts/integration_test.py</code> 连接真实 seekdb 实例，41 项检查全部通过；独立 API 测试 27 项全部通过；浏览器功能验证 8 项全部通过；停止再重启 uvicorn 后文档、批注、阅读状态仍保留。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>验证结果</h2>
+            <div style="text-align:center;">
+                <div class="verification-badge">&#10003; pytest 45/45 通过</div>
+                <div class="verification-badge">&#10003; seekdb 集成测试 41/41 通过</div>
+                <div class="verification-badge">&#10003; API 测试 27/27 通过</div>
+                <div class="verification-badge">&#10003; 浏览器验证 8/8 通过</div>
+                <div class="verification-badge">&#10003; 重启持久化验证通过</div>
+            </div>
+            <div class="note" style="margin-top:24px;">
+                <strong>无伪造数据声明：</strong>本项目不编造用户规模、提效百分比或论文引用数据。所有演示笔记明确标注为【演示笔记】，仅供功能验证使用。验证结果均来自主机真实运行 seekdb Docker 容器 + 本机 uvicorn 的测试输出。
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>安全设计</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>XSS 防护</h3>
+                    <p>所有用户内容使用 textContent 渲染，不插入未转义 HTML。来源链接仅允许 http/https，配置 rel="noopener"。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>SQL 注入防护</h3>
+                    <p>所有 SQL 使用参数化查询。FULLTEXT 查询关键字经白名单过滤。表名列名固定标识符。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>输入验证</h3>
+                    <p>Pydantic 模型强制类型和长度约束。文件大小限制 10MB。仅允许 .txt/.md 扩展名。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>部署安全</h3>
+                    <p>仅绑定 loopback (127.0.0.1)。单人本地模式，无用户认证。不暴露数据库或本地 API 到公网。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>复现本项目</h2>
+            <p>克隆仓库，安装依赖，启动 seekdb Docker 容器，运行初始化脚本，启动应用。详细步骤请查看仓库内 README.md。</p>
+            <a href="https://github.com/fanbaodong/powercontext-2026/tree/competition/26-qoder-research-desk/qoder" class="btn" target="_blank" rel="noopener noreferrer">查看源码仓库</a>
+        </div>
+
+        <div class="note">
+            <strong>演示数据声明：</strong>应用内置 8 篇原创中文学习方法笔记，全部明确标为【演示笔记】。不伪造真实论文引用、虚假用户数据或编造提效数字。演示数据仅供功能验证和界面展示使用。
+        </div>
+    </div>
+
+    <footer>
+        <p>研读台 ReadTrace · 2026 OceanBase 数据库大赛参赛作品</p>
+        <p style="margin-top:8px;">源码：<a href="https://github.com/fanbaodong/powercontext-2026/tree/competition/26-qoder-research-desk/qoder" target="_blank" rel="noopener noreferrer" style="color:var(--primary);">github.com/fanbaodong/powercontext-2026</a></p>
+        <p style="margin-top:8px;">本展示页为静态页面，由 Qoder Sites 托管。应用本身为本地单人工作台，需自行部署运行。</p>
+    </footer>
+</body>
+</html>

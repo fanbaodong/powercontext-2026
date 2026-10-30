@@ -1,0 +1,40 @@
+{
+  "suite": "Local application browser acceptance",
+  "records": [
+    {
+      "check": "Paste import refreshes the library",
+      "passed": true
+    },
+    {
+      "check": "Chinese search displays database results",
+      "passed": true
+    },
+    {
+      "check": "Evidence card creation and text safety",
+      "passed": true
+    },
+    {
+      "check": "Edit annotation through UI",
+      "passed": true
+    },
+    {
+      "check": "Upload works without hidden textarea validation",
+      "passed": true
+    },
+    {
+      "check": "Refresh preserves imported documents",
+      "passed": true
+    },
+    {
+      "check": "Mobile layout has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "check": "No uncaught browser errors",
+      "passed": true,
+      "errors": []
+    }
+  ],
+  "passed": 8,
+  "failed": 0
+}

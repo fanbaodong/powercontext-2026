@@ -1,0 +1,79 @@
+{
+  "project_id": 2,
+  "query": "间隔重复",
+  "total": 6,
+  "results": [
+    {
+      "chunk_id": 2000093,
+      "document_id": 2000037,
+      "paragraph_number": 6,
+      "content": "间隔重复适用于需要大量记忆的学习领域，如语言学习、医学知识、法律条文等。",
+      "char_count": 36,
+      "document_title": "【演示笔记】间隔重复与记忆曲线",
+      "document_author": "研读台演示数据",
+      "document_source_url": null,
+      "document_tags": "记忆,间隔重复,认知科学,演示",
+      "relevance": 0.4319371727748692
+    },
+    {
+      "chunk_id": 2000090,
+      "document_id": 2000037,
+      "paragraph_number": 3,
+      "content": "间隔重复通过在特定时间点安排复习来对抗遗忘。典型的复习间隔是：学习后第1天、第3天、第7天、第14天、第30天。每次成功的回忆都会延长下一次复习的间隔。",
+      "char_count": 76,
+      "document_title": "【演示笔记】间隔重复与记忆曲线",
+      "document_author": "研读台演示数据",
+      "document_source_url": null,
+      "document_tags": "记忆,间隔重复,认知科学,演示",
+      "relevance": 0.35383427689140506
+    },
+    {
+      "chunk_id": 2000091,
+      "document_id": 2000037,
+      "paragraph_number": 4,
+      "content": "现代间隔重复工具如Anki使用算法自动安排复习时间。当你回答正确时，卡片的复习间隔会增加；回答错误时，间隔会缩短。这种自适应机制确保你在最需要复习的时候复习。",
+      "char_count": 79,
+      "document_title": "【演示笔记】间隔重复与记忆曲线",
+      "document_author": "研读台演示数据",
+      "document_source_url": null,
+      "document_tags": "记忆,间隔重复,认知科学,演示",
+      "relevance": 0.3269170874220817
+    },
+    {
+      "chunk_id": 2000088,
+      "document_id": 2000037,
+      "paragraph_number": 1,
+      "content": "间隔重复是基于艾宾浩斯遗忘曲线发展而来的学习策略。其核心思想是：在即将遗忘的时间点进行复习，可以最有效地巩固记忆。",
+      "char_count": 57,
+      "document_title": "【演示笔记】间隔重复与记忆曲线",
+      "document_author": "研读台演示数据",
+      "document_source_url": null,
+      "document_tags": "记忆,间隔重复,认知科学,演示",
+      "relevance": 0.28896672504378285
+    },
+    {
+      "chunk_id": 2000089,
+      "document_id": 2000037,
+      "paragraph_number": 2,
+      "content": "这里用复习计划说明间隔重复的操作流程。学习者可以记录每次回忆的情况，再调整下一次复习日期；本演示不提供或宣称统一的记忆保持率。",
+      "char_count": 63,
+      "document_title": "【演示笔记】间隔重复与记忆曲线",
+      "document_author": "研读台演示数据",
+      "document_source_url": null,
+      "document_tags": "记忆,间隔重复,认知科学,演示",
+      "relevance": 0.264
+    },
+    {
+      "chunk_id": 2000092,
+      "document_id": 2000037,
+      "paragraph_number": 5,
+      "content": "可以自拟一次学习实验：对两组相近的材料分别安排集中复习和间隔复习，预先约定检查时间，再保存真实答题记录。结论应根据记录形成，而不是预设效果。",
+      "char_count": 70,
+      "document_title": "【演示笔记】间隔重复与记忆曲线",
+      "document_author": "研读台演示数据",
+      "document_source_url": null,
+      "document_tags": "记忆,间隔重复,认知科学,演示",
+      "relevance": 0.08435582822085891
+    }
+  ]
+}

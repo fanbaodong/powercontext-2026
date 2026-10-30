@@ -1,0 +1,110 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>ReadTrace · Qoder 会话记录</title>
+<style>body{margin:0;padding:48px;background:#f6f4ef;color:#172a36;font:16px/1.8 "Microsoft YaHei",sans-serif}main{max-width:1000px;margin:auto}h1{font-size:32px}small{color:#54706f}section{background:white;border:1px solid #cbd6d3;border-radius:12px;padding:24px;margin:20px 0}pre{white-space:pre-wrap;font:14px/1.8 monospace}h2{color:#167e70;font-size:18px}.note{border-left:4px solid #167e70;padding:16px;background:#e6f1ed}</style><main>
+<small>2026 OceanBase · Qoder CLI 1.1.81</small><h1>研读台：真实开发会话摘录</h1>
+<p class="note">本页由真实 Qoder CLI JSONL 记录导出，不是官方客户端界面；未重写所展示的 Qoder 对话。完整文本、工具调用元数据与原始日志摘要散列见同目录文件。历史输出不等同于最终验收结论。</p>
+<p>会话 ID：790ccffd-3e95-44a4-a5ac-d65d4ab5c8c6</p><section><h2>build-01 · Qoder 真实输出</h2><pre>I&#x27;ll build the ReadTrace (研读台) application. Let me first check the current workspace structure, then plan and implement systematically.</pre></section><section><h2>build-01 · Qoder 真实输出</h2><pre>全部完成。以下是交付总结：
+
+---
+
+## 研读台 ReadTrace - 交付完成
+
+### 文件结构（37 个源文件）
+
+```
+powercontext/qoder/
+├── app/                          # 后端应用
+│   ├── main.py                  # FastAPI 入口
+│   ├── config.py                # 配置管理
+│   ├── database.py              # 数据库连接
+│   ├── models.py                # 数据模型 + 输入验证
+│   ├── routers/                 # API 路由（5 个模块）
+│   ├── services/                # 业务逻辑（6 个模块）
+│   └── static/                  # 前端（HTML/CSS/JS）
+├── scripts/
+│   ├── init_db.sql              # 数据库 Schema + FULLTEXT 索引
+│   ├── integration_test.py      # seekdb 真实集成测试
+│   └── load_demo_data.py        # 8 篇演示笔记
+├── tests/                       # 单元测试（37 个用例）
+├── showcase/index.html          # 项目展示页
+├── README.md                    # 使用说明
+├── ARCHITECTURE.md              # 架构设计
+├── DEVLOG.md                    # 开发日志（据实记录）
+├── VERIFICATION.md              # 验证样例
+├── DELIVERY.md                  # 交付清单
+├── requirements.txt             # 固定版本依赖
+├── docker-compose.yml           # 容器化部署
+├── Dockerfile
+├── .env.example                 # 占位配置
+└── .gitignore
+```
+
+### 核心功能
+
+1. **项目管理** - 创建/切换/隔离
+2. **资料导入** - 粘贴/上传，自动切块，幂等处理
+3. **全文检索** - seekdb FULLTEXT + MATCH...AGAINST，项目筛选
+4. **证据卡片** - 收藏/批注/出处/Markdown 导出
+5. **阅读进度** - 三态管理 + 统计面板
+6. **安全设计** - XSS 防护、参数化 SQL、URL 白名单
+
+### 未执行的操作（按要求）
+
+- 未运行 Shell
+- 未下载依赖
+- 未启动服务
+- 未发布 Sites
+- 未做 commit/push
+- 未编造运行结果
+
+### 主机验证步骤
+
+```bash
+cd powercontext/qoder
+pip install -r requirements.txt
+# 启动 seekdb 并执行 scripts/init_db.sql
+# 配置 .env（参考 .env.example）
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+# 浏览器访问 http://127.0.0.1:8000
+# 可选：python scripts/load_demo_data.py
+# 可选：pytest tests/ -v
+# 可选：python scripts/integration_test.py
+```
+
+如发现错误，请提供终端日志和浏览器控制台输出，Qoder 将根据真实错误修复。</pre></section><section><h2>fix-01 · Qoder 真实输出</h2><pre>收到全部反馈。我来系统性地修复所有问题。先读取需要修改的文件。</pre></section><section><h2>fix-01 · Qoder 真实输出</h2><pre>修复前端 JavaScript — XSS 防护、状态管理、错误显示、按钮状态。</pre></section><section><h2>fix-02 · Qoder 真实输出</h2><pre>Let me read the current state of the files that need fixes.</pre></section><section><h2>fix-02 · Qoder 真实输出</h2><pre>All fixes are complete. Here&#x27;s the modification summary for this round:
+
+---
+
+## 第三轮修复摘要
+
+### 关键代码修复（3 项）
+
+| 文件 | 修复内容 |
+|------|----------|
+| `app/services/card.py:104-119` | `update_card_annotation` 改为先 SELECT 检查 id+project_id 是否存在，再 UPDATE。不再依赖 `rowcount==0` 判断不存在（MySQL 数据未变时 rowcount 为 0）。同一批注重复 PUT 现在返回卡片对象而非 404 |
+| `app/services/card.py:131-145` | `_sanitize_md_text`（删除 HTML 标签）替换为 `_escape_md_text`：`&lt;` → `&amp;lt;`、`&gt;` → `&amp;gt;`、转义 Markdown 特殊字符 `` \`[]*_~| ``、中和 `javascript:` 链接。保留用户原始内容（比较符号、数学文本等） |
+| `scripts/init_db.py:21-24` | 添加 `re.fullmatch(r&quot;[A-Za-z_][A-Za-z0-9_]*&quot;, db_name)` 校验，防止 `settings.db_name` 被注入到 CREATE DATABASE SQL 中 |
+
+### 测试修复（3 个文件）
+
+| 文件 | 修复内容 |
+|------|----------|
+| `tests/test_chunking.py` | `test_short_paragraphs_filtered` → `test_short_paragraphs_kept`（短段落&quot;短&quot;现在保留为 chunk）；`test_paragraph_numbering_after_filter` → `test_paragraph_numbering_continuous`（4 段落全保留，编号 1-4）；`test_long_paragraph_split` 输入从 `&quot;句子一。&quot;*300`(1200字符) 改为 `*600`(2400字符 &gt; 2000 限制)；`test_split_by_sentence` 输入从 `*100` 改为 `*400` |
+| `scripts/integration_test.py` | 测试主体包裹在 `try/finally` 中，finally 只清理测试项目；空内容测试改为 `except ValueError`（不再用泛 `Exception`）；无效进度状态测试移除 `except Exception` 兜底；数据库不可用时 `sys.exit(1)` 而非 `return` |
+| `scripts/load_demo_data.py` | 跟踪单独失败计数，有任何失败返回 `False`（exit 1）；删除&quot;高出约20%&quot;无来源统计，改为&quot;教育实践表明...&quot;；删除&quot;平均需要23分钟&quot;，改为描述上下文切换的认知资源消耗 |
+
+### 文档更新（4 个文件）
+
+| 文件 | 修复内容 |
+|------|----------|
+| `README.md` | 端口 8000→8036、2881→2896；添加 `python scripts/init_db.py` 命令；Docker Compose 说明改为&quot;仅数据库容器&quot;；目录结构添加 `init_db.py` |
+| `ARCHITECTURE.md` | 端口更新；&quot;连接池&quot;→&quot;每次请求新建连接&quot;；&quot;BOOLEAN MODE&quot;→&quot;NATURAL LANGUAGE MODE&quot;；切块策略删除&quot;短段落过滤&quot;，添加&quot;保留所有非空段落&quot;；部署选项更新 |
+| `DEVLOG.md` | 新增&quot;主机真实验证结果&quot;节（26/27 通过，1 失败已修复）；时间线添加三轮修复记录；&quot;连接池&quot;描述修正 |
+| `VERIFICATION.md` | 所有端口 8000→8036；搜索描述添加 &quot;NATURAL LANGUAGE MODE&quot; |
+
+### 主机需验证
+
+1. **同一批注重复 PUT** — `PUT /api/cards/{id}` 相同 annotation 应返回 200 + 卡片对象（不再 404）
+2. **Markdown 导出** — chunk_content 含 `&lt;`、`&gt;`、`[text](url)` 等字符时应被正确转义
+3. **单元测试** — `pytest tests/test_chunking.py -v` 全部通过
+4. **集成测试** — `python scripts/integration_test.py` 全部通过（含 try/finally 清理）
+5. **演示数据** — `python scripts/load_demo_data.py` 加载成功，无伪造统计数字</pre></section></main></html>
