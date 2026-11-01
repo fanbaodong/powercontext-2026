@@ -1,0 +1,7 @@
+{
+  "server": {
+    "version": "5.7.25-OceanBase seekdb-v1.4.0.0",
+    "version_comment": "OceanBase 4.3.5.3 seekdb (r1.4.0.0) (Built 100000172026082615-0003f8d4b32a2cfe3b75ae8f4dbe26fcee994541 Aug 26 2026)"
+  },
+  "database": "minimax_sdd"
+}

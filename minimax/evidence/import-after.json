@@ -1,0 +1,199 @@
+{
+  "operation": "upsert current project sources",
+  "database": "minimax_sdd",
+  "project_id": "ticket-project-4c5adab8bdf74cc2",
+  "documents": [
+    {
+      "path": "README.md",
+      "kind": "spec",
+      "sha256": "b97eeb99b3ca5847d42b2b80c094ae3115393059c493f43e4cb42ede1bae06d9",
+      "start_line": 1,
+      "end_line": 31,
+      "symbols": [],
+      "revision": 1
+    },
+    {
+      "path": "specs/payment_receipts.md",
+      "kind": "spec",
+      "sha256": "af9da3ed87bff7fd9d32d27483bd125ba44edba147ac4388f3f3f9cb2e271235",
+      "start_line": 1,
+      "end_line": 9,
+      "symbols": [],
+      "revision": 1
+    },
+    {
+      "path": "specs/ticket_filters.md",
+      "kind": "spec",
+      "sha256": "d1cd482ec8520744372132f7e0608c535581d0fef963b507dd655a385e4ec1a8",
+      "start_line": 1,
+      "end_line": 47,
+      "symbols": [],
+      "revision": 2
+    },
+    {
+      "path": "tests/test_regression.py",
+      "kind": "test",
+      "sha256": "e878046c37903b362b3bd646b82f61ebe0e21d49aff5a065a247e62fe0d87373",
+      "start_line": 1,
+      "end_line": 73,
+      "symbols": [
+        {
+          "name": "TicketRegressionTests",
+          "start_line": 13,
+          "end_line": 69
+        },
+        {
+          "name": "setUp",
+          "start_line": 14,
+          "end_line": 15
+        },
+        {
+          "name": "ids",
+          "start_line": 17,
+          "end_line": 18
+        },
+        {
+          "name": "test_default_returns_every_ticket_sorted_by_id",
+          "start_line": 20,
+          "end_line": 21
+        },
+        {
+          "name": "test_status_keeps_exact_matching_behavior",
+          "start_line": 23,
+          "end_line": 25
+        },
+        {
+          "name": "test_unknown_status_returns_empty",
+          "start_line": 27,
+          "end_line": 28
+        },
+        {
+          "name": "test_limit_is_applied_after_status_and_sorting",
+          "start_line": 30,
+          "end_line": 31
+        },
+        {
+          "name": "test_zero_limit_returns_empty",
+          "start_line": 33,
+          "end_line": 34
+        },
+        {
+          "name": "test_large_limit_does_not_add_rows",
+          "start_line": 36,
+          "end_line": 37
+        },
+        {
+          "name": "test_no_requested_tags_preserves_unfiltered_behavior",
+          "start_line": 39,
+          "end_line": 42
+        },
+        {
+          "name": "test_original_input_and_tag_filters_are_not_mutated",
+          "start_line": 44,
+          "end_line": 51
+        },
+        {
+          "name": "test_non_tag_fields_are_preserved",
+          "start_line": 53,
+          "end_line": 55
+        },
+        {
+          "name": "test_empty_queue_is_valid",
+          "start_line": 57,
+          "end_line": 58
+        },
+        {
+          "name": "test_invalid_limit_still_raises_value_error",
+          "start_line": 60,
+          "end_line": 63
+        },
+        {
+          "name": "test_iterable_input_remains_supported",
+          "start_line": 65,
+          "end_line": 69
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "path": "tests/test_tags.py",
+      "kind": "test",
+      "sha256": "b9457a388cb74c83babd9596042fabafb02581938022d570ca214da58df1d31c",
+      "start_line": 1,
+      "end_line": 42,
+      "symbols": [
+        {
+          "name": "TicketTagAcceptanceTests",
+          "start_line": 12,
+          "end_line": 38
+        },
+        {
+          "name": "setUp",
+          "start_line": 13,
+          "end_line": 14
+        },
+        {
+          "name": "ids",
+          "start_line": 16,
+          "end_line": 17
+        },
+        {
+          "name": "test_single_tag_filters_nonmatching_tickets",
+          "start_line": 19,
+          "end_line": 20
+        },
+        {
+          "name": "test_all_requested_tags_are_required_not_any",
+          "start_line": 22,
+          "end_line": 23
+        },
+        {
+          "name": "test_normalize_both_requested_and_stored_tags",
+          "start_line": 25,
+          "end_line": 26
+        },
+        {
+          "name": "test_ignore_duplicate_and_blank_requested_tags",
+          "start_line": 28,
+          "end_line": 29
+        },
+        {
+          "name": "test_unicode_casefold_not_ascii_only_lower",
+          "start_line": 31,
+          "end_line": 32
+        },
+        {
+          "name": "test_unknown_tag_returns_no_tickets",
+          "start_line": 34,
+          "end_line": 35
+        },
+        {
+          "name": "test_apply_combined_status_and_tags_before_page_limit",
+          "start_line": 37,
+          "end_line": 38
+        }
+      ],
+      "revision": 1
+    },
+    {
+      "path": "tickets.py",
+      "kind": "code",
+      "sha256": "3fec2ca5146fa3996bf85f4eeda24844c316f877c9c912ab994db827262101f5",
+      "start_line": 1,
+      "end_line": 52,
+      "symbols": [
+        {
+          "name": "select_tickets",
+          "start_line": 9,
+          "end_line": 37
+        },
+        {
+          "name": "main",
+          "start_line": 40,
+          "end_line": 48
+        }
+      ],
+      "revision": 2
+    }
+  ]
+}

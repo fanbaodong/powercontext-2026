@@ -1,0 +1,110 @@
+{
+  "pid": 22456,
+  "state": {
+    "code_version": "d08b44cfcca7355557b014842f860cb7d782b69b3dc448d2fb49a5a67470a45d",
+    "completed": [
+      "import",
+      "spec-v2",
+      "baseline-tests",
+      "minimax-change",
+      "after-tests"
+    ],
+    "pending": [],
+    "task_id": "ticket-tags-all-v2",
+    "test_results": {
+      "after": {
+        "regression": {
+          "assertion_failures": 0,
+          "code_version": "d08b44cfcca7355557b014842f860cb7d782b69b3dc448d2fb49a5a67470a45d",
+          "command": [
+            "python",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_regression.py",
+            "-v"
+          ],
+          "cwd": "work",
+          "environment_errors": false,
+          "executed_tests": 12,
+          "exit_code": 0,
+          "log": "after-regression.log",
+          "suite_ok": true,
+          "timestamp_utc": "2026-11-01T07:39:23.883077+00:00"
+        },
+        "target": {
+          "assertion_failures": 0,
+          "code_version": "d08b44cfcca7355557b014842f860cb7d782b69b3dc448d2fb49a5a67470a45d",
+          "command": [
+            "python",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_tags.py",
+            "-v"
+          ],
+          "cwd": "work",
+          "environment_errors": false,
+          "executed_tests": 7,
+          "exit_code": 0,
+          "log": "after-target.log",
+          "suite_ok": true,
+          "timestamp_utc": "2026-11-01T07:39:23.522447+00:00"
+        }
+      },
+      "before": {
+        "regression": {
+          "assertion_failures": 0,
+          "code_version": "9f4b82b924b606c705b949130bc6656ecae933af439b7753c8c39b1773a1632f",
+          "command": [
+            "python",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_regression.py",
+            "-v"
+          ],
+          "cwd": "work",
+          "environment_errors": false,
+          "executed_tests": 12,
+          "exit_code": 0,
+          "log": "before-regression.log",
+          "suite_ok": true,
+          "timestamp_utc": "2026-11-01T07:30:45.690330+00:00"
+        },
+        "target": {
+          "assertion_failures": 7,
+          "code_version": "9f4b82b924b606c705b949130bc6656ecae933af439b7753c8c39b1773a1632f",
+          "command": [
+            "python",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_tags.py",
+            "-v"
+          ],
+          "cwd": "work",
+          "environment_errors": false,
+          "executed_tests": 7,
+          "exit_code": 1,
+          "log": "before-target.log",
+          "suite_ok": false,
+          "timestamp_utc": "2026-11-01T07:30:45.317374+00:00"
+        }
+      }
+    }
+  },
+  "operation": "new process reads PowerContext memory"
+}

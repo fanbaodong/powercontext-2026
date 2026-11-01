@@ -4,7 +4,20 @@
 
 ## 当前状态
 
-模块和验证样例已实现：45 项模块测试通过，真实 seekdb 规格更新检索、7 个目标测试因行为缺失失败、12 个回归测试通过、PowerContext 跨进程恢复均已验证。准备阶段的真实记录在 `preflight-evidence/`。尚未配置 MiniMax Key，因此**当前还没有真实模型生成记录和修改后通过结果，不应提测**。完成后本节会更新为实际结果，并提供 `evidence/`。
+2026-11-01 已完成真实开发验证。MiniMax-M3.1-Flash 根据实际检索上下文生成了标签筛选修改，7 个目标测试从 7 个业务断言失败变为全部通过，12 个回归测试前后全部通过。PowerContext 在新进程恢复完成状态并跳过重复修改。模块的 45 项测试通过。
+
+`sample/` 保留可复现的修改前样例；**最终业务实现位于 `evidence/after/tickets.py`**，是模型原始最终代码，未由另一模型或人工代写。运行 `python evidence/after/tickets.py --status open --tag security --limit 1` 返回工单 ID 9。
+
+| 验收项 | 实际记录 |
+| --- | --- |
+| 真实 MiniMax 修改 | `evidence/minimax-record.json`：请求任务、上下文、模型输出、响应 ID 和 token 使用量 |
+| 最新上下文 | `evidence/context-v1.json`、`context-v2.json`：同路径 ANY → ALL，revision 1 → 2 |
+| 数据库实际参与 | `evidence/database.json`、`import-*.json`、`context-*.json`：真实 seekdb 身份、SQL 和结果 |
+| 状态重启复用 | `evidence/state-saved-*.json`、`state-restored-*.json`：SDK 引用、不同进程、完整状态 |
+| 同一测试前后验证 | `evidence/before-tests.json`、`after-tests.json`、对应 `.log`，测试哈希一致 |
+| 完整代码和可运行说明 | 下方安装、CLI、重放步骤；`evidence/before/`、`after/` 和 `change.diff` |
+
+历史准备记录保留在 `preflight-evidence/`；最终结果以 `evidence/` 为准。
 
 ## 环境与安装
 
@@ -76,7 +89,7 @@ python -m sdd_context export --run .runs/development --output evidence
 
 输出是 JSON；运行目录记录 SQL、绑定参数、数据库身份、文档 revision/哈希/内容、来源行号和 AST 符号范围。状态写入引用包含实际 SDK 版本、artifact/revision/entry ID，以及写入/恢复进程 PID。
 
-## 干净环境重放（交付真实模型记录后可用）
+## 干净环境重放
 
 评审核对开发记录即可，无须模型再次生成相同代码，也无须 Key：
 
@@ -86,6 +99,8 @@ python -m sdd_context resume --run .runs/review
 python -m sdd_context resume --run .runs/review --replay-record evidence/minimax-record.json
 python -m sdd_context resume --run .runs/review
 ```
+
+首次安装完成后，以上复现不需要配置 MiniMax Key。也可运行 `python verify_evidence.py` 核对交付记录、前后源码、固定测试与模型输出的一致性。
 
 重放明确记录为 `replay-saved-model-change`，不会伪装成新模型调用。新的数据库项目 ID 和空状态独立建立；调用记录须与任务、源码和当前规格内容对应。
 

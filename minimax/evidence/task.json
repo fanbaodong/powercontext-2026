@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "task_id": "ticket-tags-all-v2",
+  "task": "Implement select_tickets ticket tags ALL filtering under REQ-TAG-001 revision 2. Normalize stored and requested tags with strip and casefold, ignore blanks and duplicates, and preserve status sorting limit and input immutability. Modify only tickets.py and run the fixed acceptance and regression tests.",
+  "query": "Implement select_tickets ticket tags ALL filtering under REQ-TAG-001 revision 2; preserve status sorting limit and regression behavior",
+  "description": "Add the requested tag filter to tickets.py::select_tickets. Use the current revision of specs/ticket_filters.md: trim and casefold both stored and requested tags, ignore blanks and duplicates, require ALL requested tags, and combine this with the unchanged status/order/limit behavior. Only modify tickets.py. Run the fixed target and regression tests without editing either suite.",
+  "source_root": "sample",
+  "required_sources": [
+    "specs/ticket_filters.md",
+    "tickets.py",
+    "tests/test_tags.py",
+    "tests/test_regression.py"
+  ],
+  "required_symbols": [
+    "REQ-TAG-001",
+    "REQ-COMPAT-001",
+    "REQ-COMPAT-002",
+    "REQ-COMPAT-003",
+    "select_tickets"
+  ],
+  "editable_file": "tickets.py",
+  "spec_source": "specs/ticket_filters.md",
+  "spec_update_file": "fixtures/ticket_filters_v2.md",
+  "expected_spec_revision": 2,
+  "distractor_sources": [
+    "specs/payment_receipts.md"
+  ],
+  "commands": {
+    "cwd": "sample",
+    "target": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_tags.py",
+      "-v"
+    ],
+    "regression": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_regression.py",
+      "-v"
+    ],
+    "all": [
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_*.py",
+      "-v"
+    ]
+  },
+  "expected_after_cli": {
+    "argv": [
+      "python",
+      "tickets.py",
+      "--status",
+      "open",
+      "--tag",
+      "security",
+      "--limit",
+      "1"
+    ],
+    "ids": [
+      9
+    ]
+  },
+  "project_id": "ticket-project-4c5adab8bdf74cc2"
+}

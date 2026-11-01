@@ -1,0 +1,144 @@
+test_all_requested_tags_are_required_not_any (test_tags.TicketTagAcceptanceTests.test_all_requested_tags_are_required_not_any) ... FAIL
+test_apply_combined_status_and_tags_before_page_limit (test_tags.TicketTagAcceptanceTests.test_apply_combined_status_and_tags_before_page_limit) ... FAIL
+test_ignore_duplicate_and_blank_requested_tags (test_tags.TicketTagAcceptanceTests.test_ignore_duplicate_and_blank_requested_tags) ... FAIL
+test_normalize_both_requested_and_stored_tags (test_tags.TicketTagAcceptanceTests.test_normalize_both_requested_and_stored_tags) ... FAIL
+test_single_tag_filters_nonmatching_tickets (test_tags.TicketTagAcceptanceTests.test_single_tag_filters_nonmatching_tickets) ... FAIL
+test_unicode_casefold_not_ascii_only_lower (test_tags.TicketTagAcceptanceTests.test_unicode_casefold_not_ascii_only_lower) ... FAIL
+test_unknown_tag_returns_no_tickets (test_tags.TicketTagAcceptanceTests.test_unknown_tag_returns_no_tickets) ... FAIL
+
+======================================================================
+FAIL: test_all_requested_tags_are_required_not_any (test_tags.TicketTagAcceptanceTests.test_all_requested_tags_are_required_not_any)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SAMPLE\tests\test_tags.py", line 23, in test_all_requested_tags_are_required_not_any
+    self.assertEqual(self.ids(tags=["backend", "bug"]), [9])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [1, 2, 4, 7, 9, 12, 15] != [9]
+
+First differing element 0:
+1
+9
+
+First list contains 6 additional elements.
+First extra element 1:
+2
+
+- [1, 2, 4, 7, 9, 12, 15]
++ [9]
+
+======================================================================
+FAIL: test_apply_combined_status_and_tags_before_page_limit (test_tags.TicketTagAcceptanceTests.test_apply_combined_status_and_tags_before_page_limit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SAMPLE\tests\test_tags.py", line 38, in test_apply_combined_status_and_tags_before_page_limit
+    self.assertEqual(self.ids(status="open", tags=["security"], limit=1), [9])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [1] != [9]
+
+First differing element 0:
+1
+9
+
+- [1]
++ [9]
+
+======================================================================
+FAIL: test_ignore_duplicate_and_blank_requested_tags (test_tags.TicketTagAcceptanceTests.test_ignore_duplicate_and_blank_requested_tags)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SAMPLE\tests\test_tags.py", line 29, in test_ignore_duplicate_and_blank_requested_tags
+    self.assertEqual(self.ids(tags=["backend", "", " BACKEND ", "   "]), [1, 4, 9])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [1, 2, 4, 7, 9, 12, 15] != [1, 4, 9]
+
+First differing element 1:
+2
+4
+
+First list contains 4 additional elements.
+First extra element 3:
+7
+
+- [1, 2, 4, 7, 9, 12, 15]
++ [1, 4, 9]
+
+======================================================================
+FAIL: test_normalize_both_requested_and_stored_tags (test_tags.TicketTagAcceptanceTests.test_normalize_both_requested_and_stored_tags)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SAMPLE\tests\test_tags.py", line 26, in test_normalize_both_requested_and_stored_tags
+    self.assertEqual(self.ids(tags=[" SECURITY ", "BACKEND"]), [4, 9])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [1, 2, 4, 7, 9, 12, 15] != [4, 9]
+
+First differing element 0:
+1
+4
+
+First list contains 5 additional elements.
+First extra element 2:
+4
+
+- [1, 2, 4, 7, 9, 12, 15]
++ [4, 9]
+
+======================================================================
+FAIL: test_single_tag_filters_nonmatching_tickets (test_tags.TicketTagAcceptanceTests.test_single_tag_filters_nonmatching_tickets)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SAMPLE\tests\test_tags.py", line 20, in test_single_tag_filters_nonmatching_tickets
+    self.assertEqual(self.ids(tags=["security"]), [4, 9])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [1, 2, 4, 7, 9, 12, 15] != [4, 9]
+
+First differing element 0:
+1
+4
+
+First list contains 5 additional elements.
+First extra element 2:
+4
+
+- [1, 2, 4, 7, 9, 12, 15]
++ [4, 9]
+
+======================================================================
+FAIL: test_unicode_casefold_not_ascii_only_lower (test_tags.TicketTagAcceptanceTests.test_unicode_casefold_not_ascii_only_lower)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SAMPLE\tests\test_tags.py", line 32, in test_unicode_casefold_not_ascii_only_lower
+    self.assertEqual(self.ids(tags=["STRASSE"]), [12])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [1, 2, 4, 7, 9, 12, 15] != [12]
+
+First differing element 0:
+1
+12
+
+First list contains 6 additional elements.
+First extra element 1:
+2
+
+- [1, 2, 4, 7, 9, 12, 15]
++ [12]
+
+======================================================================
+FAIL: test_unknown_tag_returns_no_tickets (test_tags.TicketTagAcceptanceTests.test_unknown_tag_returns_no_tickets)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$SAMPLE\tests\test_tags.py", line 35, in test_unknown_tag_returns_no_tickets
+    self.assertEqual(self.ids(tags=["not-a-present-label"]), [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [1, 2, 4, 7, 9, 12, 15] != []
+
+First list contains 7 additional elements.
+First extra element 0:
+1
+
+- [1, 2, 4, 7, 9, 12, 15]
++ []
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.007s
+
+FAILED (failures=7)

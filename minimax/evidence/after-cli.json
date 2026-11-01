@@ -1,0 +1,27 @@
+{
+  "command": [
+    "python",
+    "tickets.py",
+    "--status",
+    "open",
+    "--tag",
+    "security",
+    "--limit",
+    "1"
+  ],
+  "exit_code": 0,
+  "output": [
+    {
+      "id": 9,
+      "title": "Reset token expiry",
+      "status": "open",
+      "tags": [
+        "Bug",
+        " backend ",
+        "Security"
+      ],
+      "priority": 1
+    }
+  ],
+  "code_version": "d08b44cfcca7355557b014842f860cb7d782b69b3dc448d2fb49a5a67470a45d"
+}

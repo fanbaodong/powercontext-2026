@@ -1,0 +1,17 @@
+test_default_returns_every_ticket_sorted_by_id (test_regression.TicketRegressionTests.test_default_returns_every_ticket_sorted_by_id) ... ok
+test_empty_queue_is_valid (test_regression.TicketRegressionTests.test_empty_queue_is_valid) ... ok
+test_invalid_limit_still_raises_value_error (test_regression.TicketRegressionTests.test_invalid_limit_still_raises_value_error) ... ok
+test_iterable_input_remains_supported (test_regression.TicketRegressionTests.test_iterable_input_remains_supported) ... ok
+test_large_limit_does_not_add_rows (test_regression.TicketRegressionTests.test_large_limit_does_not_add_rows) ... ok
+test_limit_is_applied_after_status_and_sorting (test_regression.TicketRegressionTests.test_limit_is_applied_after_status_and_sorting) ... ok
+test_no_requested_tags_preserves_unfiltered_behavior (test_regression.TicketRegressionTests.test_no_requested_tags_preserves_unfiltered_behavior) ... ok
+test_non_tag_fields_are_preserved (test_regression.TicketRegressionTests.test_non_tag_fields_are_preserved) ... ok
+test_original_input_and_tag_filters_are_not_mutated (test_regression.TicketRegressionTests.test_original_input_and_tag_filters_are_not_mutated) ... ok
+test_status_keeps_exact_matching_behavior (test_regression.TicketRegressionTests.test_status_keeps_exact_matching_behavior) ... ok
+test_unknown_status_returns_empty (test_regression.TicketRegressionTests.test_unknown_status_returns_empty) ... ok
+test_zero_limit_returns_empty (test_regression.TicketRegressionTests.test_zero_limit_returns_empty) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.006s
+
+OK

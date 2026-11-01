@@ -1,0 +1,57 @@
+{
+  "results": {
+    "target": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_tags.py",
+        "-v"
+      ],
+      "cwd": "work",
+      "exit_code": 0,
+      "code_version": "d08b44cfcca7355557b014842f860cb7d782b69b3dc448d2fb49a5a67470a45d",
+      "log": "after-target.log",
+      "assertion_failures": 0,
+      "environment_errors": false,
+      "executed_tests": 7,
+      "suite_ok": true,
+      "timestamp_utc": "2026-11-01T07:39:23.522447+00:00"
+    },
+    "regression": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_regression.py",
+        "-v"
+      ],
+      "cwd": "work",
+      "exit_code": 0,
+      "code_version": "d08b44cfcca7355557b014842f860cb7d782b69b3dc448d2fb49a5a67470a45d",
+      "log": "after-regression.log",
+      "assertion_failures": 0,
+      "environment_errors": false,
+      "executed_tests": 12,
+      "suite_ok": true,
+      "timestamp_utc": "2026-11-01T07:39:23.883077+00:00"
+    }
+  },
+  "source_hashes": {
+    "README.md": "b97eeb99b3ca5847d42b2b80c094ae3115393059c493f43e4cb42ede1bae06d9",
+    "specs/payment_receipts.md": "af9da3ed87bff7fd9d32d27483bd125ba44edba147ac4388f3f3f9cb2e271235",
+    "specs/ticket_filters.md": "d1cd482ec8520744372132f7e0608c535581d0fef963b507dd655a385e4ec1a8",
+    "tests/test_regression.py": "e878046c37903b362b3bd646b82f61ebe0e21d49aff5a065a247e62fe0d87373",
+    "tests/test_tags.py": "b9457a388cb74c83babd9596042fabafb02581938022d570ca214da58df1d31c",
+    "tickets.json": "ccc34286b85075ef03c8ea26bbd5dc3dbc45fee1709a9d1e5a86cfc9412cc17b",
+    "tickets.py": "3fec2ca5146fa3996bf85f4eeda24844c316f877c9c912ab994db827262101f5"
+  }
+}

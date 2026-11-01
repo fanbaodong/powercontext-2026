@@ -1,0 +1,12 @@
+test_all_requested_tags_are_required_not_any (test_tags.TicketTagAcceptanceTests.test_all_requested_tags_are_required_not_any) ... ok
+test_apply_combined_status_and_tags_before_page_limit (test_tags.TicketTagAcceptanceTests.test_apply_combined_status_and_tags_before_page_limit) ... ok
+test_ignore_duplicate_and_blank_requested_tags (test_tags.TicketTagAcceptanceTests.test_ignore_duplicate_and_blank_requested_tags) ... ok
+test_normalize_both_requested_and_stored_tags (test_tags.TicketTagAcceptanceTests.test_normalize_both_requested_and_stored_tags) ... ok
+test_single_tag_filters_nonmatching_tickets (test_tags.TicketTagAcceptanceTests.test_single_tag_filters_nonmatching_tickets) ... ok
+test_unicode_casefold_not_ascii_only_lower (test_tags.TicketTagAcceptanceTests.test_unicode_casefold_not_ascii_only_lower) ... ok
+test_unknown_tag_returns_no_tickets (test_tags.TicketTagAcceptanceTests.test_unknown_tag_returns_no_tickets) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.003s
+
+OK

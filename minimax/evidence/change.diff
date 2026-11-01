@@ -1,0 +1,42 @@
+--- before/tickets.py
++++ after/tickets.py
+@@ -7,17 +7,32 @@
+ 
+ 
+ def select_tickets(tickets, *, status=None, tags=None, limit=None):
+-    """Return matching tickets in ascending ID order without mutating input.
+-
+-    The existing API reserves ``tags`` for the requested change. In this
+-    baseline it is accepted but ignored, so target tests fail on behavior.
+-    """
++    """Return matching tickets in ascending ID order without mutating input."""
+     if limit is not None and (
+         not isinstance(limit, int) or isinstance(limit, bool) or limit < 0
+     ):
+         raise ValueError("limit must be a non-negative integer or None")
+-    selected = [ticket for ticket in tickets
+-                if status is None or ticket["status"] == status]
++
++    requested_tags = {
++        normalized
++        for tag in (tags or [])
++        if (normalized := tag.strip().casefold())
++    }
++
++    selected = []
++    for ticket in tickets:
++        if status is not None and ticket["status"] != status:
++            continue
++        if requested_tags:
++            stored_tags = {
++                normalized
++                for tag in ticket.get("tags", [])
++                if (normalized := tag.strip().casefold())
++            }
++            if not requested_tags.issubset(stored_tags):
++                continue
++        selected.append(ticket)
++
+     selected.sort(key=lambda ticket: ticket["id"])
+     return selected if limit is None else selected[:limit]
+ 

@@ -1,1 +1,3 @@
 * text=auto eol=lf
+# Unified diffs intentionally contain one-space context lines.
+*.diff -whitespace
