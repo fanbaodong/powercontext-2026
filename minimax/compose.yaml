@@ -1,0 +1,33 @@
+name: minimax-sdd
+
+# Official image instructions:
+# https://github.com/oceanbase/docker-images/blob/main/seekdb/README.md
+# Development instance isolated from the other competition projects.
+services:
+  seekdb:
+    image: oceanbase/seekdb:1.4.0-100000172026082615
+    container_name: minimax-sdd-seekdb
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:2893:2881"
+    environment:
+      ROOT_PASSWORD: ${SEEKDB_PASSWORD:-}
+      SEEKDB_DATABASE: minimax_sdd
+      CPU_COUNT: "2"
+      MEMORY_LIMIT: 2G
+      DATAFILE_SIZE: 512M
+      DATAFILE_NEXT: 512M
+      DATAFILE_MAXSIZE: 4G
+      LOG_DISK_SIZE: 2G
+    volumes:
+      - minimax_sdd_data:/var/lib/seekdb
+    healthcheck:
+      test: ["CMD-SHELL", "MYSQL_PWD=\"$${ROOT_PASSWORD}\" mysql -h127.0.0.1 -P2881 -uroot -e 'SELECT 1' >/dev/null 2>&1"]
+      interval: 5s
+      timeout: 4s
+      retries: 12
+      start_period: 10s
+
+volumes:
+  minimax_sdd_data:
+    name: minimax-sdd-data

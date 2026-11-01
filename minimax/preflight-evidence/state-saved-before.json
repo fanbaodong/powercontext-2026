@@ -1,0 +1,79 @@
+{
+  "state": {
+    "completed": [
+      "import",
+      "spec-v2",
+      "baseline-tests"
+    ],
+    "pending": [
+      "minimax-change",
+      "after-tests"
+    ],
+    "test_results": {
+      "target": {
+        "command": [
+          "python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test_tags.py",
+          "-v"
+        ],
+        "cwd": "work",
+        "exit_code": 1,
+        "code_version": "9f4b82b924b606c705b949130bc6656ecae933af439b7753c8c39b1773a1632f",
+        "log": "before-target.log",
+        "assertion_failures": 7,
+        "environment_errors": false,
+        "executed_tests": 7,
+        "suite_ok": false,
+        "timestamp_utc": "2026-11-01T07:30:45.317374+00:00"
+      },
+      "regression": {
+        "command": [
+          "python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test_regression.py",
+          "-v"
+        ],
+        "cwd": "work",
+        "exit_code": 0,
+        "code_version": "9f4b82b924b606c705b949130bc6656ecae933af439b7753c8c39b1773a1632f",
+        "log": "before-regression.log",
+        "assertion_failures": 0,
+        "environment_errors": false,
+        "executed_tests": 12,
+        "suite_ok": true,
+        "timestamp_utc": "2026-11-01T07:30:45.690330+00:00"
+      }
+    },
+    "code_version": "9f4b82b924b606c705b949130bc6656ecae933af439b7753c8c39b1773a1632f",
+    "task_id": "ticket-tags-all-v2"
+  },
+  "evidence": {
+    "backend": "powercontext",
+    "package_version": "1.2.0",
+    "api_source": "https://github.com/oceanbase/powercontext/blob/powercontext-v1.2.0/docs/zh/development/memory-layer.md",
+    "operation": "runtime.memory.for_scope(scope).remember",
+    "scope": "minimax-sdd",
+    "scope_id": "scp_7nznb5swyr4q3ch01n2bgamsek",
+    "task_id": "ticket-tags-all-v2",
+    "previous_revision": null,
+    "memory_ref": {
+      "family": "memory",
+      "artifact_id": "memory",
+      "revision": 1
+    },
+    "entry_id": "mem_ent_95a26469fab14a168213e37b25b71b33",
+    "entry_version_id": "mem_ver_bf3a8f8993cb4c8c8f23f1f797118f79"
+  },
+  "writer_pid": 1508
+}

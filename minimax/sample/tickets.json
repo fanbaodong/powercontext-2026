@@ -1,0 +1,9 @@
+[
+  {"id": 9, "title": "Reset token expiry", "status": "open", "tags": ["Bug", " backend ", "Security"], "priority": 1},
+  {"id": 2, "title": "Update billing manual", "status": "closed", "tags": ["documentation", "billing"], "priority": 3},
+  {"id": 7, "title": "Polish login page", "status": "open", "tags": ["bug", "frontend"], "priority": 2},
+  {"id": 4, "title": "Rotate database secrets", "status": "closed", "tags": ["Backend", "security"], "priority": 1},
+  {"id": 1, "title": "Queue worker retry", "status": "open", "tags": ["backend", "reliability"], "priority": 2},
+  {"id": 12, "title": "Localize support page", "status": "open", "tags": ["Straße", "docs"], "priority": 3},
+  {"id": 15, "title": "Unclassified issue", "status": "open", "tags": [], "priority": 4}
+]
