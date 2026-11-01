@@ -1,0 +1,90 @@
+{
+  "source_commit": "4c5ae49c203339c3a0f39d5eed8a88f00d4c86c8",
+  "source": "git archive HEAD (committed files only)",
+  "api_key_provided": false,
+  "initial_run_directory_exists": false,
+  "database": "minimax_review_20261101",
+  "python": "3.14.3",
+  "dependency_environment": "existing locked virtualenv, clean project/SQL database/PowerContext state",
+  "commands": [
+    {
+      "argv": [
+        "python",
+        "verify_evidence.py"
+      ],
+      "exit_code": 0,
+      "cwd": "source/minimax",
+      "log": "01.log"
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "cwd": "source/minimax",
+      "log": "02.log"
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "sdd_context",
+        "prepare",
+        "--run",
+        ".runs/review"
+      ],
+      "exit_code": 0,
+      "cwd": "source/minimax",
+      "log": "03.log"
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "sdd_context",
+        "resume",
+        "--run",
+        ".runs/review"
+      ],
+      "exit_code": 0,
+      "cwd": "source/minimax",
+      "log": "04.log"
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "sdd_context",
+        "resume",
+        "--run",
+        ".runs/review",
+        "--replay-record",
+        "evidence/minimax-record.json"
+      ],
+      "exit_code": 0,
+      "cwd": "source/minimax",
+      "log": "05.log"
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "sdd_context",
+        "resume",
+        "--run",
+        ".runs/review"
+      ],
+      "exit_code": 0,
+      "cwd": "source/minimax",
+      "log": "06.log"
+    }
+  ],
+  "timestamp_utc": "2026-11-01T07:43:27.479029+00:00",
+  "all_passed": true
+}

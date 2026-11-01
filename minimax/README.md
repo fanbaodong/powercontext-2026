@@ -19,6 +19,8 @@
 
 历史准备记录保留在 `preflight-evidence/`；最终结果以 `evidence/` 为准。
 
+已从 Git 提交导出干净副本，在独立 SQL 数据库、空 PowerContext 状态、没有 MiniMax Key 的条件下完成重放；45 项模块测试及全部步骤通过。复用了已安装的锁定 Python 依赖环境，未声称重新安装整台机器。命令、退出码与日志在 `verification/clean-replay/`。
+
 ## 环境与安装
 
 - Python 3.14（开发环境 3.14.3）；依赖精确版本见 `requirements.lock`。

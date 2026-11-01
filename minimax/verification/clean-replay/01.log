@@ -1,0 +1,9 @@
+{
+  "verified": true,
+  "target_before": "7 assertion failures",
+  "target_after": "7 passed",
+  "regression_before_after": "12 passed",
+  "unchanged_tests": true,
+  "model": "MiniMax-M3.1-Flash",
+  "after_code_version": "d08b44cfcca7355557b014842f860cb7d782b69b3dc448d2fb49a5a67470a45d"
+}

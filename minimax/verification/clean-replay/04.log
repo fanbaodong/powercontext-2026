@@ -1,0 +1,8 @@
+{
+  "state_reused": true,
+  "action": "continue at minimax-change",
+  "pending": [
+    "minimax-change",
+    "after-tests"
+  ]
+}
